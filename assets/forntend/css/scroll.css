@@ -1,0 +1,799 @@
+ #panel,#flip {
+    padding: 6px 15px !important;
+    text-align: left;
+   /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#panel {
+    padding: 6px 15px !important;
+    display: none;
+}
+#flip {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#pane, #fli {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+   border: solid 4px #fff;
+}
+#fli {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#pane {
+    padding: 6px 15px !important;
+    display: none;
+}
+#selide, #seliniumide {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+   border: solid 4px #fff;
+}
+#selide {
+    padding: 6px 15px !important;
+    display: none;
+}
+#seliniumide {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+
+#loctoridentifaction,#loctor {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+   border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#loctoridentifaction {
+    padding: 6px 15px !important;
+    display: none;
+}
+#loctor {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#java,#javabasics {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#java {
+    padding: 6px 15px !important;
+    display: none;
+}
+#javabasics {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#junitfarmework,#junit {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#junitfarmework {
+    padding: 6px 15px !important;
+    display: none;
+}
+#junit {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#testengframework,#testeng {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#testengframework {
+    padding: 6px 15px !important;
+    display: none;
+}
+#testeng {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#seleniumwebdriver,#selenium {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#seleniumwebdriver {
+    padding: 6px 15px !important;
+    display: none;
+}
+#selenium {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}						
+#sampleprogramswebdriver,#sampleprograms {
+    padding: 6px 15px !important;
+    text-align: left;
+     /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#sampleprogramswebdriver {
+    padding: 6px 15px !important;
+    display: none;
+}
+#sampleprograms {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#workingmultibrowers,#working {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#workingmultibrowers {
+    padding: 6px 15px !important;
+    display: none;
+}
+#working {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#buildcofiguration,#buildconfi {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#buildcofiguration {
+    padding: 6px 15px !important;
+    display: none;
+}
+#buildconfi {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#versioncontrollingtool,#versioncontrolling {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#versioncontrollingtool {
+    padding: 6px 15px !important;
+    display: none;
+}	
+#versioncontrolling {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#automationtestframework,#automationtest {
+    padding: 6px 15px !important;
+    text-align: left;
+     /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#automationtestframework {
+    padding: 6px 15px !important;
+    display: none;
+} 
+#automationtest {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#interviewquestions,#interview {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#interviewquestions {
+    padding: 6px 15px !important;
+    display: none;
+} 
+#interview {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#automationtestframework,#automationtest {
+    padding: 6px 15px !important;
+    text-align: left;
+   /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#automationtestframework {
+    padding: 6px 15px !important;
+    display: none;
+} 
+#automationtest {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#guiapplicationdev,#guiapplication {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#guiapplicationdev {
+    padding: 6px 15px !important;
+    display: none;
+} 
+#guiapplication {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#databaseprog,#database {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#databaseprog {
+    padding: 6px 15px !important;
+    display: none;
+} 
+#database {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#assemnlies,#asse {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#assemnlies {
+    padding: 6px 15px !important;
+    display: none;
+} 
+#asse {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#deligates,#deliga {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#deligates {
+    padding: 6px 15px !important;
+    display: none;
+} 
+#deliga {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#usercontrolsevents,#usercontrols {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#usercontrolsevents {
+    padding: 6px 15px !important;
+    display: none;
+}
+#usercontrols {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#pointers,#pointer {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#pointers {
+    padding: 6px 15px !important;
+    display: none;
+}
+#pointer {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#distributedtech,#distributed {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#distributedtech {
+    padding: 6px 15px !important;
+    display: none;
+}
+#distributed {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#filehandling,#filehand {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#filehandling {
+    padding: 6px 15px !important;
+    display: none;
+}
+#filehand {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#attributes,#attribute {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#attributes {
+    padding: 6px 15px !important;
+    display: none;
+}
+#attribute {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+/* newly */
+#measuresgroups,#measures {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#measuresgroups {
+    padding: 6px 15px !important;
+    display: none;
+}
+#measures {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#typesofrela,#typesof {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#typesofrela {
+    padding: 6px 15px !important;
+    display: none;
+}
+#typesof {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#typesofhierarchies,#typesofhiera {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#typesofhierarchies {
+    padding: 6px 15px !important;
+    display: none;
+}
+#typesofhiera {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#partions,#partion {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#partions {
+    padding: 6px 15px !important;
+    display: none;
+}
+#partion {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#transla,#trans {
+    padding: 6px 15px !important;
+    text-align: left;
+     /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#transla {
+    padding: 6px 15px !important;
+    display: none;
+}
+#trans {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#actions,#action {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#actions {
+    padding: 6px 15px !important;
+    display: none;
+}
+#action {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#deployingprocess,#deploying {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#deployingprocess {
+    padding: 6px 15px !important;
+    display: none;
+}
+#deploying {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#deployingproject,#deployingproj {
+    padding: 6px 15px !important;
+    text-align: left;
+     /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#deployingproject {
+    padding: 6px 15px !important;
+    display: none;
+}
+#deployingproj {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#synchronizing,#synchro {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#synchronizing {
+    padding: 6px 15px !important;
+    display: none;
+}
+#synchro {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#processing,#process {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#processing {
+    padding: 6px 15px !important;
+    display: none;
+}
+#process {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#automating,#automate {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#automating {
+    padding: 6px 15px !important;
+    display: none;
+}
+#automate {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#advantages,#advantage {
+    padding: 6px 15px !important;
+    text-align: left;
+     /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#advantages {
+    padding: 6px 15px !important;
+    display: none;
+}
+#advantage {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#mdxque,#mdxq {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#mdxque {
+    padding: 6px 15px !important;
+    display: none;
+}
+#mdxq {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+/* interview Quesions  */
+#hadoop-inter,#hadoop {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#hadoop-inter {
+    padding: 6px 15px !important;
+    display: none;
+}
+#hadoop {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+
+#hadoop-admin,#hadoo {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#hadoop-admin {
+    padding: 6px 15px !important;
+    display: none;
+}
+#hadoo {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#hadoop-data,#science {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#hadoop-data {
+    padding: 6px 15px !important;
+    display: none;
+}
+#science {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#sap-success-factors,#sap-success-fact {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#sap-success-factors {
+    padding: 6px 15px !important;
+    display: none;
+}
+#sap-success-fact {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#sap-hana,#hana {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#sap-hana {
+    padding: 6px 15px !important;
+    display: none;
+}
+#hana {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#sap-abap,#sap-ab {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#sap-abap {
+    padding: 6px 15px !important;
+    display: none;
+}
+#sap-ab {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#sap-basis,#sap-bas {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#sap-basis {
+    padding: 6px 15px !important;
+    display: none;
+}
+#sap-bas {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#sap-bo,#sap-b {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#sap-bo {
+    padding: 6px 15px !important;
+    display: none;
+}
+#sap-b {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#sap-bo-admin,#sap-bo-adm {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#sap-bo-admin {
+    padding: 6px 15px !important;
+    display: none;
+}
+#sap-bo-adm {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}
+#sap-bods,#sap-bod {
+    padding: 6px 15px !important;
+    text-align: left;
+    /* background-color: #f5f5f5;*/
+    border: solid 4px #fff;
+	font-style:inherit;
+	font-size:15px;
+}
+#sap-bods {
+    padding: 6px 15px !important;
+    display: none;
+}
+#sap-bod {
+	font-size:18px;
+	color: #FFF;
+    background-color:#FFA500;
+}

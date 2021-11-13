@@ -1,0 +1,242 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+include('Layouts/adminLayout_Header.php');
+?>
+<div class="main-panel">
+  <div class="content-wrapper" >
+          <div class="row">
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Manage Employees </h4>
+                  <div class="row grid-margin">
+                    <div class="col-12">
+                    	<div class="header">
+                            <h5>
+                          <div style="float:right"><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#AddemployeeModal"><i class="fa fa-plus" aria-hidden="true"></i>Add</button></div>
+                         </h5>
+                        </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="table-responsive">
+                        <table id="employeetable" class="table table-hover">
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+            <!-- partial:partials/_footer.html -->
+          <div class="footer-wrapper">
+            <footer class="footer">
+              <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                <span class="text-center text-sm-left d-block d-sm-inline-block">Copyright &copy; 2019 Bizbrainz.in. All rights reserved. </span>
+                <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Designed by: <a href="http://bizbrainz.in/" target="_blank">BizBrainz.in</a> </span>
+              </div>
+            </footer>
+          </div>
+          <!-- partial -->
+        <!-- main-panel ends -->
+        </div>
+      <!-- page-body-wrapper ends -->
+      </div>
+    </div>
+    <!-- container-scroller -->
+       
+
+
+
+
+  <!-- The Modal -->
+  <div class="modal fade function_edit_employee" id="EditEmployeeModal">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content"> 
+        <div class="modal-header">
+          <h4 class="modal-title">Edit Employee</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div> 
+        <div class="modal-body">
+                    <div class="body">
+                       
+                        <form id="edit_employee" method="post" enctype="multipart/form-data" >
+                           <input type="hidden" class="form-control" id="edit_employee_id" name="edit_employee_id" >
+                            <div class="row clearfix">
+                               <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Employee Category </label>
+                                         <select class="form-control" name="edit_employee_category" id="edit_employee_category"></select>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Employee First Name</label>
+                                         <input type="text" class="form-control" placeholder="Employee First Name" name="edit_employee_firstname" id="edit_employee_firstname">
+                                    </div>
+                                </div>
+                               <div class="col-sm-12">
+                                    <div class="form-group">
+                                       <label>Employee Last Name</label>
+                                        <input type="text" class="form-control" placeholder="Employee Last Name" name="edit_employee_lastname" id="edit_employee_lastname">
+                                    </div>
+                                </div>
+                                 <div class="col-sm-12">
+                                    <div class="form-group">
+                                       <label>Employee Designation</label>
+                                        <input type="text" class="form-control" placeholder="Employee Designation" name="edit_employee_designation" id="edit_employee_designation">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                       <label>Employee Mobile No</label>
+                                        <input type="text" class="form-control" placeholder="Employee Mobile No" name="edit_employee_mobileno" id="edit_employee_mobileno">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                       <label>Employee Image Alt</label>
+                                        <input type="text" class="form-control" placeholder="Employee Image Alt" name="edit_employee_image_alt" id="edit_employee_image_alt">
+                                    </div>
+                                </div>
+                               <div class="row clearfix"> 
+                                <div class="col-sm-6">
+                                   <div class="form-group">
+                                       <label for="Gender">Status</label>   
+                                         <p class='radiovalid'>
+                                        <label class="radio-inline">
+                                        <input type="radio" name="edit_employee_status" value="1" id="edit_active"> Active
+                                        </label>
+                                        <label class="radio-inline">
+                                        <input type="radio" name="edit_employee_status" value="2" id="edit_inactive"> In Active
+                                        </label><br>
+                                        </p>
+                                   </div>
+                                   <div class="form-group">
+                                      <label>Employee Image</label>
+                                         <input type="file" class="form-control" placeholder="Employee Heading" name="edit_employee_image" id="edit_employee_image">
+                                    </div>
+                                </div>
+                                 <div class="col-sm-6">
+                                    <div id="employeeimage"></div>
+                                </div> 
+                               </div>
+                            </div>    
+                        </div>
+                     </div>
+        <div class="modal-footer">
+        <div class="col-sm-12" style="text-align: center;">
+            <button type="button" id="updateemployee" class="btn btn-primary">Update</button>
+            <button type="reset" class="btn btn-outline-secondary">Reset</button>
+             <div id="employee-updatemsg"></div>
+        </div>
+        </form>
+        </div>  
+      </div>
+    </div>
+  </div>
+
+
+<!--  add model start-->
+
+
+<div class="modal fade" id="AddemployeeModal">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Add Employee</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+         <!-- Modal body -->
+        <div class="modal-body">
+        
+                    <div class="body">
+                        <form id="add_employee" method="post" enctype="multipart/form-data">
+                            <div class="row clearfix">
+                               <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Employee Category </label>
+                                         <select class="form-control" name="add_employee_category" id="add_employee_category"></select>
+                                    </div>
+                                </div>
+                                  <div class="col-sm-12">
+                                    <div class="form-group">
+                                        <label>Employee First Name</label>
+                                         <input type="text" class="form-control" placeholder="Employee First Name" name="add_employee_firstname" id="add_employee_firstname">
+                                    </div>
+                                </div>
+                               <div class="col-sm-12">
+                                    <div class="form-group">
+                                       <label>Employee Last Name</label>
+                                        <input type="text" class="form-control" placeholder="Employee Last Name" name="add_employee_lastname" id="add_employee_lastname">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                       <label>Employee Designation</label>
+                                        <input type="text" class="form-control" placeholder="Employee Designation" name="add_employee_designation" id="add_employee_designation">
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="form-group">
+                                       <label>Employee Mobile No</label>
+                                        <input type="text" class="form-control" placeholder="Employee Mobile No" name="add_employee_mobileno" id="add_employee_mobileno">
+                                    </div>
+                                </div>
+                                 <div class="col-sm-12">
+                                    <div class="form-group">
+                                       <label>Employee Image Alt</label>
+                                        <input type="text" class="form-control" placeholder="Employee Image Alt" name="add_employee_image_alt" id="add_employee_image_alt">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="form-group">
+                                      <label>Employee Image</label>
+                                         <input type="file" class="form-control" placeholder="Employee Heading" name="add_employee_image" id="add_employee_image">
+                                    </div>
+                                </div> 
+                                <div class="col-sm-6">
+                                   <div class="form-group">
+                                       <label for="Gender">Status</label>   
+                                         <p class='add_employee_status'>
+                                        <label class="radio-inline">
+                                        <input type="radio" name="add_employee_status" value="1" id="active"> Active
+                                        </label>
+                                        <label class="radio-inline">
+                                        <input type="radio" name="add_employee_status" value="2" id="inactive"> In Active
+                                        </label><br>
+                                        </p>
+                                   </div>
+                                </div>
+                            </div>             
+                        </div> 
+                      </div> 
+
+        <div class="modal-footer">
+          <div class="col-sm-12" style="text-align: center;">
+
+             <button  type="button" id="addemployee" class="btn btn-primary">Save</button>
+             <button type="reset" class="btn btn-outline-secondary">Reset</button>
+              <div id="employee-addmsg"></div>
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+<!--  add model end -->
+      
+
+
+
+<?php
+include('Layouts/adminLayout_Footer.php');
+?>
+   

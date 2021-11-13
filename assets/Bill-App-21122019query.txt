@@ -1,0 +1,64 @@
+
+
+INSERT INTO `business_status` (`id`, `status_value`) VALUES (NULL, '<label class="badge badge-success"> Partial Payment </label>');
+
+ALTER TABLE `business_payments` CHANGE `selected_id` `business_package_id` INT(11) NOT NULL;
+
+
+ALTER TABLE `business_payments_transaction`  ADD `payment_mode_id` INT(11) NULL  AFTER `transaction_status`,  ADD `debitcard_number` VARCHAR(20) NULL  AFTER `payment_mode_id`,  ADD `debitcard_expireddate` DATE NULL  AFTER `debitcard_number`,  ADD `creditcard_number` VARCHAR(20) NULL  AFTER `debitcard_expireddate`,  ADD `creditcard_expireddate` DATE NULL  AFTER `creditcard_number`,  ADD `upi` VARCHAR(20) NULL  AFTER `creditcard_expireddate`,  ADD `phonepay` VARCHAR(20) NULL  AFTER `upi`,  ADD `amazonpay` VARCHAR(20) NULL  AFTER `phonepay`,  ADD `googlepay` VARCHAR(20) NULL  AFTER `amazonpay`,  ADD `paytm_upi` VARCHAR(20) NULL  AFTER `googlepay`,  ADD `cheque_number` VARCHAR(15) NULL  AFTER `paytm_upi`,  ADD `cheque_account_no` VARCHAR(20) NULL  AFTER `cheque_number`,  ADD `cheque_holder_name` VARCHAR(50) NULL  AFTER `cheque_account_no`,  ADD `cheque_issue_date` DATE NULL  AFTER `cheque_holder_name`,  ADD `cheque_bankname` VARCHAR(50) NULL  AFTER `cheque_issue_date`,  ADD `cheque_ifsc` VARCHAR(20) NULL  AFTER `cheque_bankname`,  ADD `cheque_photo` VARCHAR(512) NULL  AFTER `cheque_ifsc`,  ADD `cheque_micr` VARCHAR(20) NULL  AFTER `cheque_photo`,  ADD `neft_number` VARCHAR(20) NULL  AFTER `cheque_micr`,  ADD `cash_amount` DECIMAL(10,2) NULL  AFTER `neft_number`,  ADD `cash_place` VARCHAR(50) NULL  AFTER `cash_amount`,  ADD `cash_date` DATE NULL  AFTER `cash_place`;
+
+ALTER TABLE `business_payments_transaction` ADD `cash_personname` VARCHAR(100) NULL AFTER `cash_date`;
+
+update `business_payments_transaction` bpt join business_payments bp set bpt.payment_mode_id=bp.payment_mode_id,
+bpt.debitcard_number=bp.debitcard_number,
+bpt.debitcard_expireddate=bp.debitcard_expireddate,
+bpt.creditcard_number=bp.creditcard_number,
+bpt.creditcard_expireddate=bp.creditcard_expireddate,
+bpt.upi=bp.upi,
+bpt.phonepay=bp.phonepay,
+bpt.amazonpay=bp.amazonpay,
+bpt.googlepay=bp.googlepay,
+bpt.paytm_upi=bp.paytm_upi,
+bpt.cheque_number=bp.cheque_number,
+bpt.cheque_account_no=bp.cheque_account_no,
+bpt.cheque_holder_name=bp.cheque_holder_name,
+bpt.cheque_issue_date=bp.cheque_issue_date,
+bpt.cheque_bankname=bp.cheque_bankname,
+bpt.cheque_ifsc=bp.cheque_ifsc,
+bpt.cheque_photo=bp.cheque_photo,
+bpt.cheque_micr=bp.cheque_micr,
+bpt.neft_number=bp.neft_number,
+bpt.cash_amount=bp.cash_amount,
+bpt.cash_place=bp.cash_place,
+bpt.cash_date=bp.cash_date,
+bpt.cash_personname=bp.cash_personname WHERE bp.business_package_id=bpt.`business_payments_id`;
+
+
+ALTER TABLE `business_payments`
+  DROP `payment_mode_id`,
+  DROP `debitcard_number`,
+  DROP `debitcard_expireddate`,
+  DROP `creditcard_number`,
+  DROP `creditcard_expireddate`,
+  DROP `upi`,
+  DROP `phonepay`,
+  DROP `amazonpay`,
+  DROP `googlepay`,
+  DROP `paytm_upi`,
+  DROP `cheque_number`,
+  DROP `cheque_account_no`,
+  DROP `cheque_holder_name`,
+  DROP `cheque_issue_date`,
+  DROP `cheque_bankname`,
+  DROP `cheque_ifsc`,
+  DROP `cheque_photo`,
+  DROP `cheque_micr`,
+  DROP `neft_number`,
+  DROP `cash_amount`,
+  DROP `cash_place`,
+  DROP `cash_date`,
+  DROP `cash_personname`;
+
+ALTER TABLE `business_campaign` CHANGE `selected_id` `business_package_id` INT(11) NOT NULL;
+ALTER TABLE `business_packages` CHANGE `selected_id` `business_package_id` INT(11) NULL DEFAULT NULL;
+
