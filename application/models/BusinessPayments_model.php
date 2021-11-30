@@ -9,7 +9,7 @@ class BusinessPayments_model extends Eloquent{
      protected $guarded = array();
     protected $table = "business_payments"; // table name
     public $primaryKey = 'id';
-    protected $fillable = ['business_id', 'business_package_id', 'receipt_no', 'project_status_id', 'promocode_id', 'discount_amount', 'total_amount', 'grand_total_amount', 'uppersale_amount', 'totaluppersale_amount', 'domain_amount', 'domain_names', 'gst_amount', 'igst_amount', 'cgst_amount', 'tds_amount', 'sgst_amount', 'account_number', 'account_holder_name', 'bank_name', 'ifsc_code', 'bank_city', 'branch_name', 'account_type', 'gstgrand_total_amount', 'created_ip', 'created_by', 'created_on', 'modified_ip', 'modified_by', 'modified_on'];
+    protected $fillable = ['id', 'business_id', 'business_package_id', 'product_type_id', 'receipt_no', 'project_status_id', 'promocode_id', 'discount_amount', 'total_amount', 'grand_total_amount', 'uppersale_amount', 'totaluppersale_amount', 'domain_amount', 'domain_names', 'gst_amount', 'igst_amount', 'cgst_amount', 'tds_amount', 'sgst_amount', 'account_number', 'account_holder_name', 'bank_name', 'ifsc_code', 'bank_city', 'branch_name', 'account_type', 'gstgrand_total_amount', 'created_ip', 'created_by', 'created_on', 'modified_ip', 'modified_by', 'modified_on'];
 
 	public function AddPayments($packagesdataarray)
 	{

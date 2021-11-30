@@ -14,35 +14,22 @@ class BusinessController extends CommonBaseController {
 		 $this->load->library(array('form_validation','ValidationTypes','excel','session','ion_auth'));
 		 $this->load->helper(array('url','html','form','util_helper','language'));
 		 $this->load->database();
-		 $this->load->model('User');
-		 $this->load->model('Userdetails_model');
-		 $this->load->model('Status_model');
-		 $this->load->model('Cities_model');
-		 $this->load->model('States_model');
-         $this->load->model('Business_model');
-         $this->load->model('Address_model');
-         $this->load->model('PaymentType_model');
-         $this->load->model('BusinessPaymentmode_model');
          $this->load->model('Campaigns_model');
          $this->load->model('BusinessCampaign_model');
          $this->load->model('BusinessOwner_model');
-         $this->load->model('BusinessEmp_model');
-         $this->load->model('Promocode_model');
-         $this->load->model('BusinessPayments_model');
          $this->load->model('Packages_model');
-         $this->load->model('Subpackages_model');
-         $this->load->model('Demowebsites_model');
-         $this->load->model('CategoriesList_model');
-         $this->load->model('BusinessKeywords_model');
          $this->load->model('Customdata_model');
-         $this->load->model('UserGroups_model');
          $this->load->model('BusinessPackage_model');
-         $this->load->model('CityMapping_model');
-         $this->load->model('Assignments_model');
          $this->load->model('BusinessPaymentTransaction_model');
-         $this->load->model('Sms_send_model'); 
-         $this->load->model('Userlogs_model'); 
-
+         $this->load->model('CityMapping_model');
+         $this->load->model('CategoriesList_model');
+         $this->load->model('Demowebsites_model');
+         $this->load->model('Business_model');
+         $this->load->model('Address_model');
+         $this->load->model('Promocode_model');
+         $this->load->model('Cities_model');
+         $this->load->model('BusinessPayments_model');
+         $this->load->model('Userdetails_model');
     }
      
      public function BusinessView()
@@ -75,9 +62,6 @@ class BusinessController extends CommonBaseController {
         }
 
 
-
-	
-
 //==== Start Business Keywords Code for Business View page ==== /
 
 	public function getBusinessKeywordslist()
@@ -103,6 +87,7 @@ class BusinessController extends CommonBaseController {
 		} 
 
 //==== Ends Business Keywords Code for Business View page ==== /
+
 
 //==== Start Demo Website Code for Business View page ==== /
 	public function getDemoWebsiteslist()
@@ -135,6 +120,7 @@ class BusinessController extends CommonBaseController {
          $appointmentsedit = $this->Business_model->editBusinessAppointments($id);
 		 echo json_encode(array('success'=>true,'data'=>$appointmentsedit)); 
 		}
+
 
 	public function updateBusinessAppointmentsData()
 	    {
@@ -263,16 +249,15 @@ public function saveBusinessData(){
                 $business_youtube                         = $this->input->post("add_business_youtube");
                 $business_linkedin                        = $this->input->post("add_business_linkedin");
                 $business_instagram                       = $this->input->post("add_business_instagram");
-
-
-                $business_gstcname       			       = $this->input->post("add_business_gstcname");
-                $business_gstno       			           = $this->input->post("add_business_gstno");
-				$business_gststate       				   = $this->input->post("add_business_gststate");
+                $business_gstcname       			      = $this->input->post("add_business_gstcname");
+                $business_gstno       			          = $this->input->post("add_business_gstno");
+				$business_gststate       				  = $this->input->post("add_business_gststate");
 				if(isset($business_gststate) && !empty($business_gststate)){
 					$business_gststate=$business_gststate;
 				}else{
 					$business_gststate=0;
 				}
+
 			    $business_gstpincode       			       = $this->input->post("add_business_gstpincode");
 				if(isset($business_gstpincode) && !empty($business_gstpincode)){
 					$business_gstpincode=$business_gstpincode;
@@ -1015,7 +1000,8 @@ public function saveBusinessData(){
 				$body=Customdata_model::where('content_type','=','Feedback')->first()->content;
 				$body=str_replace("{CompanyName}",$hiuser,$body);
 				$body=str_replace("{URL}",$url,$body);
-		        sendEmail("info@bizbrainz.in","Administrator",$business_email,$subject,$body);
+
+		        sendEmail($business_email,$subject,$body,null);
 
 		        $subject1='Sample Websites';
 				$url1 = getHostURL(true).'websites';
@@ -1024,51 +1010,50 @@ public function saveBusinessData(){
 				$body1=Customdata_model::where('content_type','=','Sample Websites')->first()->content;
 				$body1=str_replace("{CompanyName}",$hiuser,$body1);
 				$body1=str_replace("{URL}",$url1,$body1);
-		        sendEmail("info@bizbrainz.in","Administrator",$business_email, $subject1,$body1); 
+
+		        sendEmail($business_email, $subject1,$body1,null); 
                 
                  if($business_status==12){
 			       $id = $addPackagesid;
-			     // $export_type = $this->input->post("export_type");
-			 $titledata='Proposal';
-			$data=$this->BusinessPayments_model->Invoice($id);
-			 $data=$this->BusinessPayments_model->Invoice($id);
-               $campaign = $data[0]['campaign_id'];
-               $package = $data[0]['package_id'];
-               $package_id = $Businessinvoice[0]['business_package_id'];
-               if($campaign!=null){
-                 $array = explode(',', $campaign);
-                  for($i=0;$i<count($array);$i++){
-                      $campaignlist[] = Campaigns_model::where('id','=',$array[$i])->get(['campaign_name','campaign_amount']);
-                  }
-               
-               }
-             if($package!=null){
-                  $array = explode(',', $package);
-                  for($i=0;$i<count($array);$i++){
-                      $packageslist[] = Packages_model::where('id','=',$array[$i])->get(['package_name','package_amount']);
-               }
-             }
-			  
-			  $filename='Proposal-'.$id.'-'.date('YmdHis').'.pdf';
-			  $data2['data']=$data;
-			  $data2['campaignlist']=$campaignlist;
-			  $data2['packageslist']=$packageslist;
-		      $data2['invoicedata']=$invoiceData;
-		    // die();
-			$data2['print']=0;
-			//load the view and saved it into $html variable
-			$html=$this->load->view('export/estimateReceiptExportPdf',$data2, true);
-			//this the the PDF filename that user will get to download
-			$pdfFilePath =FCPATH.'/assets/downloads/'.$filename;
-			//load mPDF library
-			$this->load->library('pdf');
-		   //generate the PDF from the given html
-			$this->pdf->pdf->useSubstitutions = true;
-			$this->pdf->pdf->WriteHTML($html);
-			//download it.
-			ob_clean();
-			$this->pdf->pdf->Output($pdfFilePath,"F");
-			// $file='assets/downloads/'.$filename;
+			       $titledata='Proposal';
+			       $data=$this->BusinessPayments_model->Invoice($id);
+			       $data=$this->BusinessPayments_model->Invoice($id);
+	               $campaign = $data[0]['campaign_id'];
+	               $package = $data[0]['package_id'];
+	               $package_id = $Businessinvoice[0]['business_package_id'];
+                    
+                    if($campaign!=null){
+		                 $array = explode(',', $campaign);
+		                  for($i=0;$i<count($array);$i++){
+		                      $campaignlist[] = Campaigns_model::where('id','=',$array[$i])->get(['campaign_name','campaign_amount']);
+		                  }
+                      }
+                   if($package!=null){
+		                  $array = explode(',', $package);
+		                  for($i=0;$i<count($array);$i++){
+		                      $packageslist[] = Packages_model::where('id','=',$array[$i])->get(['package_name','package_amount']);
+                             }
+                       }
+					  $filename='Proposal-'.$id.'-'.date('YmdHis').'.pdf';
+					  $data2['data']=$data;
+					  $data2['campaignlist']=$campaignlist;
+					  $data2['packageslist']=$packageslist;
+				      $data2['invoicedata']=$invoiceData;
+				    // die();
+					$data2['print']=0;
+					//load the view and saved it into $html variable
+					$html=$this->load->view('export/estimateReceiptExportPdf',$data2, true);
+					//this the the PDF filename that user will get to download
+					$pdfFilePath =FCPATH.'/assets/downloads/'.$filename;
+					//load mPDF library
+					$this->load->library('pdf');
+				   //generate the PDF from the given html
+					$this->pdf->pdf->useSubstitutions = true;
+					$this->pdf->pdf->WriteHTML($html);
+					//download it.
+					ob_clean();
+					$this->pdf->pdf->Output($pdfFilePath,"F");
+					// $file='assets/downloads/'.$filename;
 			        
 					
 			        $receiptsubject1='Proposal';
@@ -1078,7 +1063,8 @@ public function saveBusinessData(){
 					$receiptbody1=str_replace("{CompanyName}",$hiuser,$receiptbody1);
 					$receiptbody1=str_replace("{URL}",$url1,$receiptbody1);
 					$attachments='assets/downloads/'.$filename; 
-		$x=sendEmail("bizbrainz2020@gmail.com","Administrator",$business_email,$receiptsubject1,$receiptbody1,$attachments);
+		            
+		            $x=sendEmail($business_email,$receiptsubject1,$receiptbody1,$attachments);
 		        
 		        }
 
@@ -1112,7 +1098,7 @@ public function saveBusinessData(){
 				$body1=str_replace("{CompanyName}",$hiuser,$body1);
 				$body1=str_replace("{URL}",$demolink_url,$body1);
 				$body1=str_replace("{BUYNOWURL}",$buynow_url,$body1);
-		        $sendresult=sendEmail("info@bizbrainz.in","Administrator",$business_email,$subject1,$body1,null);
+		        $sendresult=sendEmail($business_email,$subject1,$body1,null);
                 $websitelink = getHostURL(true).'websites';
                  if($business_status==15){
                  	 $body2="Hi, ".$name.", Greetings From Bizbrainz Technologies Private Limited. Click on the link below to view our sample website for Your Kind Reference. ".$demolink_url." We are providing life time website at Rs.15000 for first 100 Customers only. ".$buynow_url." For Any Queries Call Us - 8196 98 98 98.";

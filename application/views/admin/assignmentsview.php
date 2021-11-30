@@ -165,6 +165,8 @@ include('Layouts/adminLayout_Header.php');
 include('Layouts/adminLayout_Footer.php');
 ?>
 
+<script src="/<?php echo base_url();?>assets/js/Common/AssignmentsController.js" type="text/javascript"></script>
+
 <script type="text/javascript">
      $( "#search_businessassignments_fromdate" ).datepicker({
       todayHighlight: true,

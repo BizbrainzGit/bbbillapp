@@ -160,17 +160,36 @@ $(function(){
         });
       });
       $("#add_business_status").html(items);
-      $("#add_packages_status").html(items);
+      // $("#add_packages_status").html(items);
       $("#edit_business_status").html(items);
       $("#edit_status").html(items);
       $("#change_status").html(items);
     
-      $("#market_add_packages_status").html(items);
+      // $("#market_add_packages_status").html(items);
       $("#market_edit_business_status").html(items);
     
-      $("#market_lead_add_packages_status").html(items);
+      // $("#market_lead_add_packages_status").html(items);
       $("#market_lead_edit_business_status").html(items);
       // $("#market_lead_edit_business_status").html(items);
+      // $("#add_paymentpending_status").html(items);
+  });
+});
+
+
+
+$(function(){          
+  var items="";
+  
+      $.getJSON(url+"Common/getStatusForPackagesSeleted",function(status){
+      items+="<option value=''>--Select Status--</option>";
+      $.each(status,function(index,itemlist) {
+      $.each(itemlist,function(index,item) {
+      items+="<option value='"+item.id+"'>"+item.status_value+"</option>";
+        });
+      });
+      $("#add_packages_status").html(items);
+      $("#market_add_packages_status").html(items);
+      $("#market_lead_add_packages_status").html(items);
       $("#add_paymentpending_status").html(items);
   });
 });
@@ -414,6 +433,26 @@ for(i=0;i<n;i++) {
 
   
 
+
+$(function(){  
+ 
+ 
+
+  var items="";
+      $.getJSON(url+"Common/getProductType",function(producttype){
+      items+="<option value=''>--Select Product Type --</option>";
+      $.each(producttype,function(index,itemlist) {
+      $.each(itemlist,function(index,item) {
+      items+="<option value='"+item.id+"'>"+item.product_type_name+"</option>";
+        });
+      });
+      $("#market_add_packages_producttype").html(items);
+      $("#add_packages_producttype").html(items);
+    
+
+  });
+     
+});
 
 
 

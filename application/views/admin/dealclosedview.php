@@ -298,7 +298,8 @@ include('Layouts/adminLayout_Header.php');
 <?php
 include('Layouts/adminLayout_Footer.php');
 ?>
-
+ <script src="/<?php echo base_url();?>assets/js/Common/DealClosedController.js" type="text/javascript"></script>
+ 
 <script type="text/javascript">
 $('#search_businessdealclosed_fromdate').datepicker({
       todayHighlight: true,

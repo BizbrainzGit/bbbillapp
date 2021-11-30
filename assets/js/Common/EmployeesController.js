@@ -14,14 +14,7 @@ employeesView();
             });
         }
 
-
-
-
-
-
 $('[data-toggle="modal"]').tooltip();
-
-
 
 function employeesViewList(employeeslistdata){
   if ( $.fn.DataTable.isDataTable('#employeestable')) {
@@ -429,7 +422,6 @@ employeesaddform.validate({
       add_employees_area:"required",
       add_employees_mobileno:{required: true,number:true,minlength:10, maxlength:10},
       add_employees_aadharno:{required: true,number:true,minlength:12, maxlength:12},
-      add_employees_photo:"required",
       add_employees_condition:"required",
       add_employees_email:{required: true,email: true },
       add_employees_password:"required",
@@ -437,7 +429,6 @@ employeesaddform.validate({
       add_employees_lname:"required",
       add_employees_fname:"required",
       add_employees_role:"required",
-      // add_employees_status:"required",
       add_employees_employe_id:"required",
       add_employees_pincode:{number:true,minlength:6, maxlength:6}
 

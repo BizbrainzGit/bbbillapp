@@ -11,7 +11,7 @@ include('Layouts/marketLayout_Header.php');
             <div class="col-12">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Assignments List</h4>
+                  <h4 class="card-title">Assignments List fwfwf</h4>
                 <div class="row grid-margin">
                     <div class="col-12" >
                       <div class="header">

@@ -19,6 +19,12 @@ $(function(){
          paging: true,
          searching: true,
          columns: [
+    //      {data: null,
+    //       'title' : 'Action',
+    //       "sClass" : "center",
+    //       mRender: function (data, type, row) {
+    // return '<button class="btn btn-warning btn-sm mt-2 market_status_edit" data-toggle="modal" id="market_status_edit" data-target="#market_EditstatusModal" title="Edi Business Status"><a data-statusbusinessid="'+data.id+'" data-businessname="' +data.company_name+ '" data-assignmentid="'+data.assignment_id+'" style="color:#ffffff"> <i class="mdi mdi-pencil-box"></i> </a></button> &nbsp;      <button class="btn btn-info btn-sm mt-2 market_selectedpackages" title="Select Package"><a data-businessid="'+data.id+'" data-businessname="' +data.company_name+ '"style="color:#ffffff" data-businessstate_id="'+data.state_id+'" > <i class="mdi mdi-package-variant" data-name="mdi-package-variant"></i> </a></button>&nbsp;'
+    //           } },
       {data: 'assignment_id',title: 'S No.'},
       {data: 'company_name',title:'Company Name'},
       {data: 'person_name',title:'Contact Person Name'},
@@ -27,12 +33,7 @@ $(function(){
       {data: 'tele_marketing_name',title:'Assigned By'}, 
       {data: 'appointment_time',title:'Appointment <br> Time'},
       {data: 'status_value',title:'Status'},
-    //   {data: null,
-    //       'title' : 'Action',
-    //       "sClass" : "center",
-    //       mRender: function (data, type, row) {
-    // return '<button class="btn btn-warning btn-sm mt-2 market_status_edit" data-toggle="modal" id="market_status_edit" data-target="#market_EditstatusModal" title="Edi Business Status"><a data-statusbusinessid="'+data.id+'" data-businessname="' +data.company_name+ '" data-assignmentid="'+data.assignment_id+'" style="color:#ffffff"> <i class="mdi mdi-pencil-box"></i> </a></button> &nbsp;      <button class="btn btn-info btn-sm mt-2 market_selectedpackages" title="Select Package"><a data-businessid="'+data.id+'" data-businessname="' +data.company_name+ '"style="color:#ffffff" data-businessstate_id="'+data.state_id+'" > <i class="mdi mdi-package-variant" data-name="mdi-package-variant"></i> </a></button>&nbsp;'
-    //           } }
+      
     
         ],
 
@@ -88,7 +89,6 @@ $('#todaymarket_change_status_form #todaymarket_change_assignment_id').val(assig
       success:function(result){
           if(result.success===true)
           { 
-            
              
              if(result.updateddata[0].is_update==1){
 
@@ -246,17 +246,12 @@ $("#market_change_status_form").validate({
 // $(document).on('click', '.market_selectedpackages a', function(e){
 //  var id= $(this).attr("data-businessid");
 //  var name=$(this).attr("data-businessname");
+
 $('#todayapptable').on('click', 'tbody tr', function () {
     var table = $('#todayapptable').DataTable();
     var row = table.row($(this)).data();
      var id = row['id'];
      var assignment_id=row['assignment_id'] ;
-     // console.log(row)
-     // var id = row['id'];
-     // alert();
-  
-// });
-
 
 $.ajax({
     type: "GET",
@@ -268,7 +263,7 @@ $.ajax({
          $(".market_todayAppointmentList_class").hide();
          $(".market_addpackages-class").show();
 
-        $('#market_add_packagesdata #market_add_packages_assignment_id').val(assignment_id);
+        // $('#market_add_packagesdata #market_add_packages_assignment_id').val(assignment_id);
         $('#market_add_packagesdata #market_edit_business_addid').val(result.data[0].address_id);
         $('#market_add_packagesdata #market_edit_business_id').val(result.data[0].id);
 
@@ -388,22 +383,23 @@ marketpackagesform.validate({
       market_edit_business_email:{required:true,email: true },
       market_edit_business_mobileno:{required:true,number:true, number:true,minlength:10, maxlength:10},
 
-      add_package_condition:"required",
-      market_add_packages_debitcardno:{number:true,minlength:5, maxlength:18},
-      market_add_packages_creditcardno:{number:true,minlength:5, maxlength:18},
+      market_add_package_condition:"required",
+    
       market_add_packages_chequeno:{number:true,minlength:4, maxlength:12},
       market_add_packages_cchequeno:{number:true,minlength:4, maxlength:12,equalTo:"#market_add_packages_chequeno"},
-      market_add_packages_cheque_micr:{number:true},
-      market_add_packages_accountno:{number:true,minlength:5, maxlength:20},
-      market_add_packages_caccountno: {number:true,minlength:5, maxlength:20,equalTo: "#market_add_packages_accountno"},
-      market_add_packages_cacholdername: { equalTo: "#market_add_packages_acholdername"},
-      market_add_packages_phonepay:{number:true,minlength:10, maxlength:12},
-      market_add_packages_amazonpay:{number:true,minlength:10, maxlength:12},
-      market_add_packages_googlepay:{number:true,minlength:10, maxlength:12},
-    
+      
+      market_add_packages_status_msg:"required", 
+      market_add_packages_status:"required",
+
+      market_add_packages_cashamount:{number:true},
+      market_add_packages_neftamount:{number:true},
+      market_add_packages_chequeamount:{number:true},
+      market_add_packages_upiamount:{number:true},
+      market_add_packages_upiphonenumber:{number:true,minlength:10, maxlength:12},
+
     }
 });
-
+ 
 marketpackagesform.children("div").steps({
     headerTag: "h3",
     bodyTag: "section",
@@ -419,36 +415,90 @@ marketpackagesform.children("div").steps({
        //    }
        //  }
         
-      // var search_website = $("#market_add_packages_businesskeyword:checked").val();
-      //    searchdemowebsitesByCategoryForPackages(search_website);
-
+     
           var paymentmodeid = $("#add_business_payment_mode:checked").val();
-         var add_business_creditcard_expireddate=$("#add_newbusiness_payment_mode").val();
-         var add_business_creditcardno=$("#add_business_creditcardno").val();
-         if(paymentmodeid==3 && (!add_business_creditcard_expireddate || add_business_creditcard_expireddate.length<=0) && (!add_business_creditcardno ||  add_business_creditcardno.length<=0)){
-            alert("Please fill all Credit Card Mode options!!!");
-            return false;
+
+if(paymentmodeid==6) {
+            var add_chequeamount=$("#market_add_packages_chequeamount").val();
+            var add_chequeno=$("#market_add_packages_chequeno").val();
+            var add_cchequeno=$("#market_add_packages_cchequeno").val();
+            var add_cheque_photo=$("#market_add_packages_cheque_photo").val();
+            if (add_chequeno.length<=0) {
+                 alert("Please fill Cheque Number");
+                 return false;
+             }
+            if (add_cchequeno.length<=0 && add_cchequeno!=add_chequeno) {
+                 alert("Please fill Confirm Cheque Number and Same As Cheque Number");
+                 return false;
+             }
+            if (add_cheque_photo.length<=0) {
+                 alert("Please Upload Cheque Photos");
+                 return false;
+             }
+            if (add_chequeamount.length<=0) {
+                 alert("Please fill Cheque Amount");
+                 return false;
+             } 
+
          }
-         var add_business_chequeaccountno=$("#market_add_packages_chequeaccountno").val();
-         var add_business_chequeno=$("#market_add_packages_chequeno").val();
-         var add_business_cchequeno=$("#market_add_packages_cchequeno").val();
-         var add_business_cheque_micr=$("#market_add_packages_cheque_micr").val();
-         var add_business_cheque_photo=$("#market_add_packages_cheque_photo").val();
-         var add_business_chequeissuedate=$("#market_add_packages_chequeissuedate").val();
+
+         if(paymentmodeid==1) {
+            var add_cashamount=$("#market_add_packages_cashamount").val();
+            var add_personame=$("#market_add_packages_personame").val();
+            if (add_personame.length<=0) {
+                 alert("Please fill Person Name");
+                 return false;
+             }
+            if (add_cashamount.length<=0) {
+                 alert("Please fill Cash Amount");
+                 return false;
+             } 
+
+         }
+
+         if(paymentmodeid==4) {
+            var add_upiname=$("#market_add_packages_upiname").val();
+            var add_upiphonenumber=$("#market_add_packages_upiphonenumber").val();
+            var add_upiphoto=$("#market_add_packages_upiphoto").val();
+            var add_upiamount=$("#market_add_packages_upiamount").val();
+            if (add_upiname.length<=0) {
+                 alert("Please fill UPI Name");
+                 return false;
+             }
+          if (add_upiphonenumber.length<=0) {
+                 alert("Please fill UPI Phone Number");
+                 return false;
+             }
+            if (add_upiamount.length<=0) {
+                 alert("Please fill UPI Amount");
+                 return false;
+             } 
+            if (add_upiphoto.length<=0) {
+                 alert("Please Upload UPI Transction Photos");
+                 return false;
+             }
+
+         }
+
+         if(paymentmodeid==7) {
+            var add_neftnumber=$("#market_add_packages_neftnumber").val();
+            var add_neftamount=$("#market_add_packages_neftamount").val();
+            var add_neftphoto=$("#market_add_packages_neftphoto").val();
+            if (add_neftnumber.length<=0) {
+                 alert("Please fill NEFT Number");
+                 return false;
+             }
+            if (add_neftamount.length<=0) {
+                 alert("Please fill NEFT Amount");
+                 return false;
+             } 
+            if (add_neftphoto.length<=0) {
+                 alert("Please Upload NEFT Transction Photos");
+                 return false;
+             }
+
+         }
          
-         if(paymentmodeid==6 && (!add_business_chequeaccountno || add_business_chequeaccountno.length<=0) && (!add_business_chequeno ||  add_business_chequeno.length<=0) && (!add_business_cchequeno || add_business_cchequeno.length<=0) && (!add_business_cheque_micr || add_business_cheque_micr.length<=0) && (!add_business_cheque_photo || add_business_cheque_photo.length<=0) && (!add_business_chequeissuedate || add_business_chequeissuedate.length<=0)){
-            alert("Please fill all Cheque Mode options!!!");
-            return false;
-         }
-         var add_business_cashamount=$("#market_add_packages_cashamount").val();
-         var add_business_cashdate=$("#market_add_packages_cashdate").val();
-         var add_business_personame=$("#market_add_packages_personame").val();
-         var add_business_placename=$("#market_add_packages_placename").val();
-         
-         if(paymentmodeid==1 && (!add_business_cashamount || add_business_cashamount.length<=0) && (!add_business_cashdate ||  add_business_cashdate.length<=0) && (!add_business_personame ||  add_business_personame.length<=0) && (!add_business_placename ||  add_business_placename.length<=0)){
-            alert("Please fill all Cash Mode options!!!");
-            return false;
-         }
          
          if (currentIndex < newIndex)
         {

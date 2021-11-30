@@ -204,6 +204,8 @@ include('Layouts/marketLayout_Header.php');
 include('Layouts/marketLayout_Footer.php');
 ?>
 
+ <script src="/<?php echo base_url();?>assets/js/Common/DealClosedController.js"></script>
+
 <script type="text/javascript">
 $('#search_businessdealclosed_fromdate').datepicker({
       todayHighlight: true,

@@ -1,13 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 // error_reporting(0);
+ob_start();
 class WelcomeForntend extends CI_Controller {
 public function __construct()
 	{
 		parent::__construct();
-		
-		$this->load->library(array('form_validation','Excel_reader','ValidationTypes','email','pagination'));
-		$this->load->helper(array('form','html','Util'));
+		$this->load->library(array('form_validation','ValidationTypes','email','pagination'));
+		$this->load->helper(array('form','html','util_helper'));
 		$this->load->database();
 		$this->load->model('User');
 		$this->load->model('Userdetails_model'); 

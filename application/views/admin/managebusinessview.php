@@ -1093,31 +1093,6 @@ include('Layouts/adminLayout_Header.php');
                  <a href="/<?php echo base_url();?>admin-manageBusiness"> <div style="float:right"><button type="button" class="btn btn-info btn-sm"> Back </button></div></a> </h4>
                   <form id="add_packagesdata"  method="post" enctype="multipart/form-data" >
                     <div>
-                    <!--  <h3 class="text-uppercase">Business KeyWords</h3>
-                      <section class="text-uppercase">
-                        <h3>Business KeyWords</h3>
-                      <div class="row clearfixed">
-                       <div class="col-sm-2 col-12"></div>
-                       <div class="col-sm-8 col-12">
-                                 <div class="row clearfix" >
-                                   <div class="col-sm-8 col-12 text-center">
-                                    <div class="form-group">
-                                      <h5>Search Business Keywords</h5>
-                                      <input type="text" class="form-control" placeholder="Search Business Keywords" name="search_packages_keyword" id="search_packages_keyword">
-                                   </div>
-                                  </div>
-                                  <div class="col-sm-4 col-12" >
-                                  </div> 
-                               </div> 
-                       </div>
-                          <div class="col-sm-2 col-12"> <div style="text-align: right;"><button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#AddNewBusinesskeywordsModal"><i class="fa fa-plus" aria-hidden="true"></i>Add Business Keywords </button></div>
-                        </div>
-                      </div>
-                         <div class="form-group" id="search_packages_keywords-msg"></div>
-                         <div class="row clearfixed" id="addkeywordspackages" >
-                        </div>
-                      </section>  -->
-
                       <h3>Demo WebSite</h3>
                       <section>
                         <h3>Demo WebSite</h3>
@@ -1303,82 +1278,48 @@ include('Layouts/adminLayout_Header.php');
                             <label>NEFT/IMPS Amount</label>
                             <input type="text" class="form-control" placeholder="NEFT/IMPS Amount" name="add_packages_neftamount" id="add_packages_neftamount">
                           </div>
+
+                          <div class="col-sm-6 col-12 form-group">
+                            <label>NEFT/IMPS Photo </label>
+                            <input type="file" class="form-control" placeholder="NEFT/IMPS Photo" name="add_packages_neftphoto" id="add_packages_neftphoto">
+                          </div>
                          </div> 
                       </div>
-                      <!--<div class="tab-content tab-content-vertical" id="paymentmode_debitcard" style="display: none">
-                        <h5> Debit Card Details :</h5>
-                        <div class="row clearfixed">
-                          <div class="col-sm-6 col-12 form-group">
-                            <label>Debit Card Number</label>
-                            <input type="text" class="form-control" placeholder="Debit Card Number" name="add_packages_debitcardno" id="add_packages_debitcardno">
-                          </div>
-                          <div class="col-sm-6 col-12 form-group">
-                            <label>Expired Date</label>
-                            <div id="datepicker-popup" class="input-group date datepicker">
-                            <input type="text" class="form-control" placeholder="Expired Date" name="add_packages_debitcard_expireddate" id="add_packages_debitcard_expireddate">
-                          </div>
-                          </div>
-                       
-                         </div> 
-                      </div>-->
-                      <!--<div class="tab-content tab-content-vertical" id="paymentmode_creditcard" style="display: none">
-                         <h5> Credit Card Details : </h5>
-                          <div class="row clearfixed">
-                          <div class="col-sm-6 col-12 form-group">
-                            <label>Credit Card Number</label>
-                            <input type="text" class="form-control" placeholder="Credit Card Number" name="add_packages_creditcardno" id="add_packages_creditcardno">
-                          </div>
-                          <div class="col-sm-6 col-12 form-group">
-                            <label>Expired Date</label>
-                            <div id="datepicker-popup" class="input-group date datepicker">
-                            <input type="text" class="form-control" placeholder="Expired Date" name="add_packages_creditcard_expireddate" id="add_packages_creditcard_expireddate">
-                          </div>
-                          </div>
-                       
-                         </div> 
-                      
-                      </div>-->
+                     
                       <div class="tab-content tab-content-vertical" id="paymentmode_upi" style="display: none">
                          <h5> UPI Details : </h5>
                          <div class="row clearfixed">
+
                           <div class="col-sm-6 col-12 form-group">
-                            <label>UPI Number</label>
-                            <input type="text" class="form-control" placeholder="UPI Number" name="add_packages_upi" id="add_packages_upi">
-                          </div>
-                            <div class="col-sm-6 col-12 form-group">
-                            <label>Phone Pay</label>
-                            <input type="text" class="form-control" placeholder="Phone Pay Number" name="add_packages_phonepay" id="add_packages_phonepay">
-                          </div>
-                           <div class="col-sm-6 col-12 form-group">
-                            <label>Amazon Pay</label>
-                            <input type="text" class="form-control" placeholder="Amazon Pay Number" name="add_packages_amazonpay" id="add_packages_amazonpay">
-                          </div>
-                           <div class="col-sm-6 col-12 form-group">
-                            <label>Google Pay</label>
-                            <input type="text" class="form-control" placeholder="GooglePay Number" name="add_packages_googlepay" id="add_packages_googlepay">
+                            <label>UPI Name</label>
+                            <input type="text" class="form-control" placeholder="UPI Name" name="add_packages_upiname" id="add_packages_upiname">
                           </div>
                           <div class="col-sm-6 col-12 form-group">
-                            <label>Amount</label>
+                            <label>UPI Id</label>
+                            <input type="text" class="form-control" placeholder="UPI Id" name="add_packages_upiid" id="add_packages_upiid">
+                          </div>
+                           <div class="col-sm-6 col-12 form-group">
+                            <label>UPI Phone Number</label>
+                            <input type="text" class="form-control" placeholder="UPI Phone Number" name="add_packages_upiphonenumber" id="add_packages_upiphonenumber">
+                          </div>
+
+                           <div class="col-sm-6 col-12 form-group">
+                            <label>UPI Transction Photo</label>
+                            <input type="file" class="form-control" placeholder="UPI Transction Photo" name="add_packages_upiphoto" id="add_packages_upiphoto">
+                          </div>
+
+                          <div class="col-sm-6 col-12 form-group">
+                            <label>UPI Amount</label>
                             <input type="text" class="form-control" placeholder="Amount" name="add_packages_upiamount" id="add_packages_upiamount">
                           </div>
+
                          </div>
                       </div>
-                      <div class="tab-content tab-content-vertical" id="paymentmode_paytm" style="display: none">
-                         <h5> PayTm Details : </h5>
-                         <div class="row clearfixed">
-                          <div class="col-sm-6 col-12 form-group">
-                            <label>PayTm UPI Number</label>
-                            <input type="text" class="form-control" placeholder="PayTm UPI Number" name="add_packages_paytm_upi" id="add_packages_paytm_upi">
-                          </div>
-                          <div class="col-sm-6 col-12 form-group">
-                            <label>PayTm Amount</label>
-                            <input type="text" class="form-control" placeholder="PayTm Amount" name="add_packages_paytmamount" id="add_packages_paytmamount">
-                          </div>
-                         </div>
-                      </div>
+
                       <div class="tab-content tab-content-vertical" id="paymentmode_cheque" style="display: none">
                         <h5> Cheque Details : </h5>
                          <div class="row clearfixed">
+
                           <div class="col-sm-6 col-12 form-group">
                             <label>Cheque Number</label>
                             <input type="text" class="form-control" placeholder="Cheque Number" name="add_packages_chequeno" id="add_packages_chequeno">
@@ -1392,14 +1333,6 @@ include('Layouts/adminLayout_Header.php');
                             <input type="text" class="form-control" placeholder="Cheque Amount" name="add_packages_chequeamount" id="add_packages_chequeamount">
                           </div>
                           <div class="col-sm-6 col-12 form-group">
-                            <label>Account Number</label>
-                            <input type="text" class="form-control" placeholder="Account Number" name="add_packages_chequeaccountno" id="add_packages_chequeaccountno">
-                          </div>
-                          <div class="col-sm-6 col-12 form-group">
-                            <label>Cheque Holder Name</label>
-                            <input type="text" class="form-control" placeholder="Cheque Holder Name" name="add_packages_chequeholdername" id="add_packages_chequeholdername">
-                          </div>
-                          <div class="col-sm-6 col-12 form-group">
                             <label>Cheque Issue Date</label>
                             <input type="text" class="form-control" placeholder="Cheque Issue Date" name="add_packages_chequeissuedate" id="add_packages_chequeissuedate">
                           </div>
@@ -1407,119 +1340,41 @@ include('Layouts/adminLayout_Header.php');
                             <label>Bank Name</label>
                             <input type="text" class="form-control " placeholder="Bank Name" name="add_packages_cheque_bankname" id="add_packages_cheque_bankname">
                           </div>
-                          <div class="col-sm-6 col-12 form-group">
-                            <label>IFSC Code</label>
-                            <input type="text" class="form-control text-uppercase" placeholder="IFSC Code" name="add_packages_cheque_ifsc" id="add_packages_cheque_ifsc">
-                          </div>
-                          <div class="col-sm-6 col-12 form-group">
-                            <label>MICR Code</label>
-                            <input type="text" class="form-control" placeholder="MICR Code" name="add_packages_cheque_micr" id="add_packages_cheque_micr">
-                          </div>
                            <div class="col-sm-6 col-12 form-group">
                             <label>Photo</label>
                            <input type="file" class="form-control" name="add_packages_cheque_photo" id="add_packages_cheque_photo">
                           </div>
+
                          </div> 
+
+
                       </div>
                      </div>
-                      <h3>Business Status </h3>
-                       <div class="col-sm-6 col-12 form-group">
-                          <label> Business Status </label>
-                            <select class="form-control"  name="add_packages_status" id="add_packages_status" >
-                           </select>
-                        </div>
+                     
                 </div>
                 </section>
-                    
-                      <!--  <h3>Account Details</h3>
-                      <section>
-                        <h3> Account Details </h3>
-                     <div class="row clearfixed">
-                        <div class="col-sm-6 col-12 form-group">
-                          <label>Account Number </label>
-                          <input type="password" class="form-control" placeholder="Account Number"  name="add_packages_accountno" id="add_packages_accountno">
-                        </div>
-                        <div class="col-sm-6 col-12 form-group">
-                          <label>Confirm Account Number</label>
-                          <input type="text" class="form-control" placeholder="Account Number" name="add_packages_caccountno" id="add_packages_caccountno">
-                        </div>
-
-                         <div class="col-sm-6 col-12 form-group">
-                          <label>Account Holder Name </label>
-                          <input type="password" class="form-control" placeholder="Account Holder Name "  name="add_packages_acholdername" id="add_packages_acholdername">
-                        </div>
-                        <div class="col-sm-6 col-12 form-group">
-                          <label>Confirm Holder Name</label>
-                          <input type="text" class="form-control" placeholder="Account Holder Name " name="add_packages_cacholdername" id="add_packages_cacholdername">
-                        </div>
-
-
-                        <div class="col-sm-6 col-12 form-group">
-                          <label>Bank Name </label>
-                          <input type="text" class="form-control " placeholder="Bank Name" name="add_packages_bankname" id="add_packages_bankname">
-                        </div>
-
-                       
-                        <div class="col-sm-6 col-12 form-group">
-                          <label>Bank IFSC Code</label>
-                          <input type="text" class="form-control text-uppercase" placeholder="Bank IFSC Code" name="add_packages_ifsccode" id="add_packages_ifsccode">
-                        </div>
-                        
-                        <div class="col-sm-6 col-12 form-group">
-                          <label>Bank City </label>
-                          <input type="text" class="form-control" placeholder="Bank City" name="add_packages_bankcity" id="add_packages_bankcity">
-                        </div>
-
-                         <div class="col-sm-6 col-12 form-group">
-                          <label>Branch Name </label>
-                          <input type="text" class="form-control" placeholder="Branch Name" name="add_packages_branchname" id="add_packages_branchname">
-                        </div>
-
-                         <div class="col-sm-6 col-12 form-group">
-                          <label>Select Account Type </label>
-                            <select class="form-control"  name="add_packages_acctype" id="add_packages_acctype" >
-                              <option value="0">Select Account Type </option>
-                              <option value="1">Current Account </option>
-                              <option value="2">Saving Account </option>
-                          </select>
-                        </div>
-                      </div>
-                      </section> -->
                       
                        <h3>Final</h3>
                       <section > 
                       <input type="hidden" class="form-control" name="razorpay_select_payment_order_id" id="razorpay_select_payment_order_id" value="<?php echo $merchant_order_id; ?>">
 
+                        <div class="row clearfixed">
 
-                      <!-- <input type="hidden" class="form-control" name="add_package_otp" id="add_package_otp">
-                      <div style="text-align: center;">
-                      <button class="btn btn-info btn-md" type="button" id="packages_generated_opt" >Generate OTP</button>
-                        </div> -->
-                                
-                    <!--   style="border: 3px solid #302b2b;border-radius: 8px; width: auto;"            
-                        <h3 style="text-align: center;">Terms and Conditions</h3>                       
-                       <div style="word-break: break-all;">
-                         <p>
-                          <ul>
-                            <li>Contract’s duration is one year or more, unless determined by the parties under this agreement/contract.
-                             </li>
-                             <li>Upon the execution of CCSI/NACH/Direct Debit MANDATE BizBrains is authorized to DEDUCT
-                                the instalment amount until BizBrains receives advance notice as specified in clause 4 of the terms of service.
-                              </li>
-                              <li>In case payments mode opted by the ADVERTISER’S is CCSI & NACH, then the contract would be AUTOMATICALLY REEWED on the same terms and conditions unless determined by parties. The automatic renewal is at the absolute discretion of the BizBrians.                               
-                              </li>
-                              <li>If Advertiser wishes to terminate the ES/CCS/NACH/ Direct Debit facility, then Advertiser has to provide prior NOTICE OF 3 MONTHS to Biz Brains, only upon the completion of minimum tenure of  9(Nine) months from the effective date.
-                              </li>
-                              <li>BizBrains reserves the right to terminate the contract or its services at its discretion with or without cause or by serving 30(Thirty) days written notice to the Advertiser.
-                              </li>
-                              <li>BizBrains DOES NOT GUARANTEE and do not intend to guarantee any business to its vendor, it is merely a medium which connects general public with vendors of goods and services listed with Biz Brains.
-                              </li>
-                              <li>In case of any Disputes, differences and /or claims arising out of the contract shall be settled by Arbitration in accordance with the provisions of Arbitration and Conciliation Act 1996 or any statutory amendment thereof. The Arbitration shall be appointed by the authorized representative/Director of BizBrains. The proceeding shall be conducted in English and held at Hyderabad. The Award shall be final and binding. The Court of Hyderabad shall have the exclusive jurisdiction.
-                              </li>
-                              <li>The Advertiser has given his consent to contact him for any business promotion of BizBrains during the tenure of this agreement or even after the expiry of its tenure. Whether the Advertiser has registered their entity/firm’s contact numbers in the “Do Not Call” registry of Telecom Regulatory of India (TRAI).</li>
-                          </ul>
-                        </p>
-                      </div> -->
+                         <div class="col-sm-6 col-12 form-group">
+                            <label> Product Type </label>
+                              <select class="form-control"  name="add_packages_producttype" id="add_packages_producttype" >
+                             </select>
+                          </div>
+
+                         <div class="col-sm-6 col-12 form-group">
+                            <label> Business Status </label>
+                              <select class="form-control"  name="add_packages_status" id="add_packages_status" >
+                             </select>
+                          </div> 
+
+
+                        </div>
+
                                <div class="form-check">
                                   <h4><label class="form-check-label">
                                   <input class="checkbox" type="checkbox" name="add_package_condition" id="add_package_condition">
@@ -1561,8 +1416,8 @@ include('Layouts/adminLayout_Header.php');
 include('Layouts/adminLayout_Footer.php');
 ?>
 
-
-
+<script src="/<?php echo base_url();?>assets/js/Common/BusinessController.js" type="text/javascript"></script>
+<script src="/<?php echo base_url();?>assets/js/Common/BusinessCPselectedController.js" type="text/javascript"></script>
 
 
 <script type="text/javascript">
@@ -1631,12 +1486,6 @@ $('#search_business_todate').datepicker({
       format: 'dd-mm-yyyy'
 });
 
-$('#add_packages_cashdate').datepicker({
-     todayHighlight: true,
-      autoclose: true,
-      startDate: '0d',
-      format: 'dd-mm-yyyy'
-});
 
 $('#add_business_cashdate').datepicker({
       todayHighlight: true,
@@ -1664,7 +1513,7 @@ $('#add_paymentpending_chequeissuedate').datepicker({
   function shownewPaymentmode(test){
 
     var test = test.value;
-    //alert(test);
+    alert(test);
     if(test==1)
       {  
     var grand_total=((document.getElementById('add_business_promocode_grandtotalamount').value)>0)? document.getElementById('add_business_promocode_grandtotalamount').value:document.getElementById('add_business_grandtotalamount').value
@@ -1931,198 +1780,137 @@ if(test==8){
     if(test==1)
       { 
        var grand_total=((document.getElementById('add_packages_grandtotal').value)>0)? document.getElementById('add_packages_grandtotal').value:document.getElementById('add_packages_total').value;
+         
         document.getElementById("add_packages_cashamount").value = grand_total;
-         document.getElementById("add_packages_upiamount").value = '';
-        document.getElementById("add_packages_paytmamount").value = '';
+        document.getElementById("add_packages_upiamount").value = '';
         document.getElementById("add_packages_chequeamount").value ='';
         document.getElementById("add_packages_neftamount").value ='';
           
         $("#paymentmode_cash").show();
         $("#paymentmode_upi").hide();
-        $("#paymentmode_paytm").hide();
         $("#paymentmode_cheque").hide();
         $("#paymentmode_neft").hide();
         $("#razorPayModal").hide(); 
 
-      $("#add_packages_upi").val('');
-      $("#add_packages_phonepay").val('');
-      $("#add_packages_amazonpay").val('');
-      $("#add_packages_googlepay").val('');
-
-      $("#add_packages_paytm_upi").val('');
-
+      $("#add_packages_neftnumber").val('');
+      $("#add_packages_neftphoto").val('');
+      
+      $("#add_packages_upiname").val('');
+      $("#add_packages_upiid").val('');
+      $("#add_packages_upiphonenumber").val('');
+      $("#add_packages_upiphoto").val('');
+      
       $("#add_packages_chequeno").val('');
       $("#add_packages_cchequeno").val('');
-      $("#add_packages_chequeaccountno").val('');
-      $("#add_packages_chequeholdername").val('');
       $("#add_packages_chequeissuedate").val('');
       $("#add_packages_cheque_bankname").val('');
-      $("#add_packages_cheque_ifsc").val('');
-      $("#add_packages_cheque_micr").val('');
       $("#add_packages_cheque_photo").val(''); 
-      $("#add_packages_neftnumber").val('');
 
       }else if(test==4){
 
-        var grand_total=((document.getElementById('add_packages_grandtotal').value)>0)? document.getElementById('add_packages_grandtotal').value:document.getElementById('add_packages_total').value;
+      var grand_total=((document.getElementById('add_packages_grandtotal').value)>0)? document.getElementById('add_packages_grandtotal').value:document.getElementById('add_packages_total').value;
         document.getElementById("add_packages_cashamount").value = '';
         document.getElementById("add_packages_upiamount").value = grand_total;
-        document.getElementById("add_packages_paytmamount").value = '';
         document.getElementById("add_packages_chequeamount").value ='';
         document.getElementById("add_packages_neftamount").value ='';
           
         $("#paymentmode_cash").hide();
         $("#paymentmode_upi").show();
-        $("#paymentmode_paytm").hide();
         $("#paymentmode_cheque").hide();
         $("#paymentmode_neft").hide();
         $("#razorPayModal").hide(); 
-      $("#add_packages_paytm_upi").val('');
-      $("#add_packages_chequeno").val('');
-      $("#add_packages_cchequeno").val('');
-      $("#add_packages_chequeaccountno").val('');
-      $("#add_packages_chequeholdername").val('');
-      $("#add_packages_chequeissuedate").val('');
-      $("#add_packages_cheque_bankname").val('');
-      $("#add_packages_cheque_ifsc").val('');
-      $("#add_packages_cheque_micr").val('');
-      $("#add_packages_cheque_photo").val(''); 
 
       $("#add_packages_cashdate").val('');
       $("#add_packages_personame").val('');
-      $("#add_packages_placename").val(''); 
+      $("#add_packages_placename").val('');
 
       $("#add_packages_neftnumber").val('');
+      $("#add_packages_neftphoto").val('');
 
-      }else if(test==5)
-      {  
-
-       var grand_total=((document.getElementById('add_packages_grandtotal').value)>0)? document.getElementById('add_packages_grandtotal').value:document.getElementById('add_packages_total').value;
-        document.getElementById("add_packages_cashamount").value = '';
-         document.getElementById("add_packages_upiamount").value = '';
-        document.getElementById("add_packages_paytmamount").value = grand_total;
-        document.getElementById("add_packages_chequeamount").value ='';
-        document.getElementById("add_packages_neftamount").value ='';
-          
-        $("#paymentmode_cash").hide();
-        $("#paymentmode_upi").hide();
-        $("#paymentmode_paytm").show();
-        $("#paymentmode_cheque").hide();
-        $("#paymentmode_neft").hide();
-        $("#razorPayModal").hide(); 
-
-        $("#add_packages_upi").val('');
-        $("#add_packages_phonepay").val('');
-        $("#add_packages_amazonpay").val('');
-        $("#add_packages_googlepay").val('');
-        $("#add_packages_chequeno").val('');
-        $("#add_packages_cchequeno").val('');
-        $("#add_packages_chequeaccountno").val('');
-        $("#add_packages_chequeholdername").val('');
-        $("#add_packages_chequeissuedate").val('');
-        $("#add_packages_cheque_bankname").val('');
-        $("#add_packages_cheque_ifsc").val('');
-        $("#add_packages_cheque_micr").val('');
-        $("#add_packages_cheque_photo").val(''); 
-
-        $("#add_packages_cashdate").val('');
-        $("#add_packages_personame").val('');
-        $("#add_packages_placename").val(''); 
-
-        $("#add_packages_neftnumber").val('');
+      $("#add_packages_chequeno").val('');
+      $("#add_packages_cchequeno").val('');
+      $("#add_packages_chequeissuedate").val('');
+      $("#add_packages_cheque_bankname").val('');
+      $("#add_packages_cheque_photo").val(''); 
 
       }else if(test==6){
 
         var grand_total=((document.getElementById('add_packages_grandtotal').value)>0)? document.getElementById('add_packages_grandtotal').value:document.getElementById('add_packages_total').value;
         document.getElementById("add_packages_cashamount").value = '';
          document.getElementById("add_packages_upiamount").value = '';
-        document.getElementById("add_packages_paytmamount").value = '';
         document.getElementById("add_packages_chequeamount").value =grand_total;
         document.getElementById("add_packages_neftamount").value ='';
           
         $("#paymentmode_cash").hide();
         $("#paymentmode_upi").hide();
-        $("#paymentmode_paytm").hide();
         $("#paymentmode_cheque").show();
         $("#paymentmode_neft").hide();
         $("#razorPayModal").hide(); 
 
-      $("#add_packages_upi").val('');
-      $("#add_packages_phonepay").val('');
-      $("#add_packages_amazonpay").val('');
-      $("#add_packages_googlepay").val('');
-
-      $("#add_packages_paytm_upi").val('');
-
-
       $("#add_packages_cashdate").val('');
       $("#add_packages_personame").val('');
-      $("#add_packages_placename").val(''); 
+      $("#add_packages_placename").val('');
 
       $("#add_packages_neftnumber").val('');
+      $("#add_packages_neftphoto").val('');
+
+      
+      $("#add_packages_upiname").val('');
+      $("#add_packages_upiid").val('');
+      $("#add_packages_upiphonenumber").val('');
+      $("#add_packages_upiphoto").val('');
 
         
       }else if(test==7)
       {   
          var grand_total=((document.getElementById('add_packages_grandtotal').value)>0)? document.getElementById('add_packages_grandtotal').value:document.getElementById('add_packages_total').value;
         document.getElementById("add_packages_cashamount").value = '';
-         document.getElementById("add_packages_upiamount").value = '';
-        document.getElementById("add_packages_paytmamount").value = '';
+        document.getElementById("add_packages_upiamount").value = '';
         document.getElementById("add_packages_chequeamount").value ='';
         document.getElementById("add_packages_neftamount").value =grand_total;
         $("#paymentmode_cash").hide();
         $("#paymentmode_upi").hide();
-        $("#paymentmode_paytm").hide();
         $("#paymentmode_cheque").hide();
         $("#paymentmode_neft").show();
         $("#razorPayModal").hide(); 
 
-        $("#add_packages_upi").val('');
-        $("#add_packages_phonepay").val('');
-        $("#add_packages_amazonpay").val('');
-        $("#add_packages_googlepay").val('');
+      $("#add_packages_cashdate").val('');
+      $("#add_packages_personame").val('');
+      $("#add_packages_placename").val('');
 
-        $("#add_packages_paytm_upi").val('');
-
-        $("#add_packages_chequeno").val('');
-        $("#add_packages_cchequeno").val('');
-        $("#add_packages_chequeaccountno").val('');
-        $("#add_packages_chequeholdername").val('');
-        $("#add_packages_chequeissuedate").val('');
-        $("#add_packages_cheque_bankname").val('');
-        $("#add_packages_cheque_ifsc").val('');
-        $("#add_packages_cheque_micr").val('');
-        $("#add_packages_cheque_photo").val(''); 
-
-        $("#add_packages_cashdate").val('');
-        $("#add_packages_personame").val('');
-        $("#add_packages_placename").val(''); 
+      $("#add_packages_upiname").val('');
+      $("#add_packages_upiid").val('');
+      $("#add_packages_upiphonenumber").val('');
+      $("#add_packages_upiphoto").val('');
+      
+      $("#add_packages_chequeno").val('');
+      $("#add_packages_cchequeno").val('');
+      $("#add_packages_chequeissuedate").val('');
+      $("#add_packages_cheque_bankname").val('');
+      $("#add_packages_cheque_photo").val(''); 
 
 
       }else if(test==8){
 
-      $("#add_packages_upi").val('');
-      $("#add_packages_phonepay").val('');
-      $("#add_packages_amazonpay").val('');
-      $("#add_packages_googlepay").val('');
-
-      $("#add_packages_paytm_upi").val('');
-
-      $("#add_packages_chequeno").val('');
-      $("#add_packages_cchequeno").val('');
-      $("#add_packages_chequeaccountno").val('');
-      $("#add_packages_chequeholdername").val('');
-      $("#add_packages_chequeissuedate").val('');
-      $("#add_packages_cheque_bankname").val('');
-      $("#add_packages_cheque_ifsc").val('');
-      $("#add_packages_cheque_micr").val('');
-      $("#add_packages_cheque_photo").val(''); 
-
       $("#add_packages_cashdate").val('');
       $("#add_packages_personame").val('');
-      $("#add_packages_placename").val(''); 
+      $("#add_packages_placename").val('');
 
       $("#add_packages_neftnumber").val('');
+      $("#add_packages_neftphoto").val('');
+      
+      $("#add_packages_upiname").val('');
+      $("#add_packages_upiid").val('');
+      $("#add_packages_upiphonenumber").val('');
+      $("#add_packages_upiphoto").val('');
+      
+      $("#add_packages_chequeno").val('');
+      $("#add_packages_cchequeno").val('');
+      $("#add_packages_chequeissuedate").val('');
+      $("#add_packages_cheque_bankname").val('');
+      $("#add_packages_cheque_photo").val(''); 
+
+
  
     var base_url='/<?php echo base_url();?>';
     $("#orderGeneration").modal();
@@ -2167,6 +1955,17 @@ if(test==8){
 });
   }
   }
+
+
+
+  $('#add_packages_cashdate').datepicker({
+
+     todayHighlight: true,
+      autoclose: true,
+      startDate: '0d',
+      format: 'dd-mm-yyyy'
+});
+
   
 </script>
 

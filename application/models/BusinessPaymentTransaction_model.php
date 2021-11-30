@@ -6,7 +6,7 @@ class BusinessPaymentTransaction_model extends Eloquent{
     public $timestamps = false;
     protected $table = "business_payments_transaction"; // table name
     public $primaryKey = 'id';
-    protected $fillable = ['business_payments_id', 'otp_no', 'order_id', 'razorpay_order_id', 'razorpay_payment_id', 'razorpay_signature', 'transaction_amount', 'transaction_status', 'payment_mode_id', 'debitcard_number', 'debitcard_expireddate', 'creditcard_number', 'creditcard_expireddate', 'upi', 'phonepay', 'amazonpay', 'googlepay', 'paytm_upi', 'cheque_number', 'cheque_account_no', 'cheque_holder_name', 'cheque_issue_date', 'cheque_bankname', 'cheque_ifsc', 'cheque_photo', 'cheque_micr', 'neft_number', 'cash_amount', 'cash_place', 'cash_date', 'cash_personname', 'created_ip', 'created_by', 'created_on', 'modified_ip', 'modified_by', 'modified_on','is_cheque_received'];
+    protected $fillable = ['id', 'business_payments_id', 'otp_no', 'order_id', 'razorpay_order_id', 'razorpay_payment_id', 'razorpay_signature', 'transaction_amount', 'transaction_status', 'payment_mode_id', 'debitcard_number', 'debitcard_expireddate', 'creditcard_number', 'creditcard_expireddate', 'upi', 'phonepay', 'amazonpay', 'googlepay', 'paytm_upi', 'cheque_number', 'cheque_account_no', 'cheque_holder_name', 'cheque_issue_date', 'cheque_bankname', 'cheque_ifsc', 'cheque_photo', 'cheque_micr', 'is_cheque_received', 'neft_number', 'cash_amount', 'cash_place', 'cash_date', 'cash_personname', 'upi_name', 'upi_id', 'upi_phone_number', 'upi_amount', 'upi_photo', 'cash_photo', 'neft_photo','neft_amount', 'payment_cleared_status', 'created_ip', 'created_by', 'created_on', 'modified_ip', 'modified_by', 'modified_on'];
 
 	public function addBPaymentTransaction($paymentArray)
 	{

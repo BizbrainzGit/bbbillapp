@@ -212,25 +212,28 @@ $times = Appointment_time_range('8:00', '21:30', '30 mins');
             <span class="menu-title">Manage Business</span>
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>Tele-Marketing-BusinessSelectedPackages">
             <i class="mdi mdi-shield-check menu-icon"></i>
-            <span class="menu-title">Manage Customer  <br> Packages Details </span>
+            <span class="menu-title">Business Packages Details </span>
+            </a>
+          </li>
+
+           <li class="nav-item">
+            <a class="nav-link" href="/<?php echo base_url();?>Tele-Marketing-BusinessTransactions">
+            <i class="mdi mdi-view-day menu-icon"></i>
+            <span class="menu-title">Business Transactions </span>
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>Tele-Marketing-DealClosed">
             <i class="mdi mdi-shield-check menu-icon"></i>
-            <span class="menu-title">Manage Deal Closed</span>
+            <span class="menu-title">Deal Closed</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/<?php echo base_url();?>Tele-Marketing-BusinessTransactions">
-            <i class="mdi mdi-view-day menu-icon"></i>
-            <span class="menu-title">Manage Business <br> Transactions </span>
-            </a>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>Tele-Marketing-SendDemoLinks">
             <i class="mdi mdi-shield-check menu-icon"></i>

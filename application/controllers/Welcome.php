@@ -628,15 +628,15 @@ function OtpVerficationToMobileForpackageMarketingLead()
 
 function testEmail()
         {
-            echo "baburao" ;
-            $from="bizbrainz2020@gmail.com";
-            $fromName="Admin" ;
-            $to="bizbrainz2020@gmail.com";
+            // echo "baburao" ;
+            // $from="bizbrainz2020@gmail.com";
+            // $fromName="Admin" ;
+            $to="bizbrainzoffice@gmail.com";
             $subject="test" ;
             $body="baburao";
             $attachments=null;
 
-           echo  $x=sendEmail($from, $fromName, $to, $subject, $body, $attachments);
+           echo  $x=sendEmail($to, $subject, $body, $attachments);
 
          }
 

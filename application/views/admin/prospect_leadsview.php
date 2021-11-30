@@ -96,5 +96,5 @@ include('Layouts/adminLayout_Header.php');
 <?php
 include('Layouts/adminLayout_Footer.php');
 ?>
-   
+ <script src="/<?php echo base_url();?>assets/js/Common/LeadsController.js" type="text/javascript"></script>  
 

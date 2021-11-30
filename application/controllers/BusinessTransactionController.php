@@ -13,7 +13,8 @@ class BusinessTransactionController extends CommonBaseController {
          $this->load->model('Customdata_model');
          $this->load->model('UserGroups_model');
          $this->load->model('BusinessPaymentTransaction_model');
-         $this->load->model('Sms_send_model'); 
+         $this->load->model('Sms_send_model');  
+         $this->load->model('CityMapping_model'); 
 
     }
 	public function adminBusinessTransactionsView()
@@ -30,7 +31,9 @@ public function MarketLeadBusinessTransactionsView()
     }
 public function MarketingBusinessTransactionsView()
     {
-     $this->load->view("market/managebusinesstransactionsview");
+          $id= $this->ion_auth->get_user_id();
+          $citydata['citydata']=$this->CityMapping_model->CitySelectedCount($id);
+          $this->load->view('market/managebusinesstransactionsview',$citydata);
     }
 public function TeleMarketingBusinessTransactionsView()
     {

@@ -19,7 +19,9 @@ class SendLinkController extends CommonBaseController {
 		$this->load->model('Address_model'); 
 		$this->load->model('Business_model'); 
 		$this->load->model('BusinessOwner_model'); 
-		$this->load->model('Cities_model');  
+		$this->load->model('Cities_model'); 
+
+		$this->load->model('CityMapping_model'); 
 				
 	}
 
@@ -29,8 +31,11 @@ class SendLinkController extends CommonBaseController {
 		  }
    
         public function marketingSendLinkView()
-	    {
-            $this->load->view('market/sendlinkview');
+	    {   
+	    	 $id= $this->ion_auth->get_user_id();
+             $citydata['citydata']=$this->CityMapping_model->CitySelectedCount($id);
+             $this->load->view('market/sendlinkview',$citydata);
+
         }
 		public function teleMarketingSendLinkView()
 	    {

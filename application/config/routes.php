@@ -86,7 +86,7 @@ $route['admin-TodayAppointments'] = 'TodayAppointmentsController/todayAppointmen
 $route['admin-Prospect-Leads'] = 'LeadsController/leadsListViewForAdmin';
 $route['admin-managecity'] = 'admin/CityController/cityView';
 $route['admin-BusinessTransactions'] = 'BusinessTransactionController/adminBusinessTransactionsView';
-
+$route['admin-Producttypes'] = 'admin/ProductTypesController/producttypeView';
 
 
 

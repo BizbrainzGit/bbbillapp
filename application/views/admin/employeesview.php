@@ -171,7 +171,7 @@ include('Layouts/adminLayout_Header.php');
 
                         <div class="col-sm-6 col-12 form-group">
                           <label>Employe ID</label>
-                          <input type="text" class="form-control text-uppercase" placeholder="Employe ID" name="add_employees_employe_id" id="add_employees_employe_id">
+                          <input type="text" class="form-control" placeholder="Employe ID" name="add_employees_employe_id" id="add_employees_employe_id">
                         </div>
 
                         <div class="col-sm-6 col-12 form-group">
@@ -209,9 +209,6 @@ include('Layouts/adminLayout_Header.php');
                          <div class="col-sm-6 col-12 form-group">
                           <label>Designation</label>
                           <select class="form-control" name="add_employees_role" id="add_employees_role">
-                             <!--  <option>Select Designation</option>
-                             <option value="2">Marketing</option>
-                             <option value="3">Tele-Marketing</option> -->
                           </select>
                         </div>
 
@@ -256,22 +253,21 @@ include('Layouts/adminLayout_Header.php');
                         </div>
                         <div class="col-sm-6 col-12 form-group">
                           <label>Pincode</label>
-                          <input type="text" class="form-control" maxlength="6" placeholder="PINCODE" name="add_employees_pincode" id="add_employees_pincode">
+                          <input type="text" class="form-control" maxlength="6" placeholder="Pincode" name="add_employees_pincode" id="add_employees_pincode">
                         </div>
                         
                         <div class="col-sm-6 col-12 form-group">
                           <label>City</label>
                            <select class="form-control" name="add_employees_city" id="add_employees_city" onchange="getState(this);">
-                            
                           </select>
-                         <!--  <input type="text" class="form-control" placeholder="Write here"> -->
+                         
                         </div>
                         <div class="col-sm-6 col-12 form-group">
                           <label>State</label>
                           <select class="form-control" name="add_employees_state" id="add_employees_state">
                             
                           </select>
-                          <!-- <input type="text" class="form-control" placeholder="Write here"> -->
+                         
                         </div>
 
                       </div>
@@ -479,3 +475,4 @@ include('Layouts/adminLayout_Header.php');
 <?php
 include('Layouts/adminLayout_Footer.php');
 ?>
+<script src="/<?php echo base_url();?>assets/js/Common/EmployeesController.js" type="text/javascript"></script>

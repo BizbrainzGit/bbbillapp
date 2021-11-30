@@ -26,6 +26,12 @@ class Status_model extends Eloquent {
 		 return $result;
 	}
 	
+
+	public function StatusForPackagesSeleted()
+	{
+		$result=self::whereIn('id',array(2,8,12,13))->orderBy('status_value', 'ASC')->get();
+		return $result;
+	}
  
 }
 ?>

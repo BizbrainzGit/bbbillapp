@@ -48,7 +48,7 @@ class BusinessSelectedPackageController extends CommonBaseController {
         { 
           $id= $this->ion_auth->get_user_id();
           $citydata['citydata']=$this->CityMapping_model->CitySelectedCount($id);
-          $this->load->view('market/managebusinesspackagesview' ,$citydata);
+          $this->load->view('market/managebusinesspackagesview',$citydata);
           
          }  
        public function marketingLeadBusinessSelectedPackagesView()

@@ -52,47 +52,27 @@ var base_url={ baseurl:"/<?php echo base_url();?>" };
   <script src="/<?php echo base_url();?>assets/js/owl-carousel.js" type="text/javascript"></script>
   <!-- End custom js for this page-->
   <script src="/<?php echo base_url();?>assets/js/select2.js" type="text/javascript"></script>
-   <script src="/<?php echo base_url();?>assets/js/gobalSettings.js"></script> 
-  <script src="/<?php echo base_url();?>assets/js/Common/ProjectStatusController.js" type="text/javascript"></script>
+  <script src="/<?php echo base_url();?>assets/js/gobalSettings.js"></script> 
   <script src="/<?php echo base_url();?>assets/js/Common/common.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/BusinessController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/BusinessSelectedPackageController.js" type="text/javascript"></script>
   <script src="/<?php echo base_url();?>assets/js/Common/LoginController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/CampaignController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/PackagesController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/SubPackagesController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/CityMappingController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/EmployeesController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/PromocodeController.js" type="text/javascript"></script>
- 
-  <script src="/<?php echo base_url();?>assets/js/Common/BusinessCPselectedController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/FeedbackQuestionController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/DealClosedController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/DemoWebsitesController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/KeywordsController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/PaymentTypesController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/BusinessKeywordsController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/LeadsController.js" type="text/javascript"></script>
-  <script src="/<?php echo base_url();?>assets/js/Common/GFormController.js" type="text/javascript"></script>
- <script src="/<?php echo base_url();?>assets/js/Common/DashboardController.js" type="text/javascript">
- </script>
- <script src="/<?php echo base_url();?>assets/js/Common/LoginReportController.js" type="text/javascript">
- </script>
- <script src="/<?php echo base_url();?>assets/js/Common/EmailSendDemolinksController.js" type="text/javascript">
- </script>
 
- <script src="/<?php echo base_url();?>assets/js/Common/SendLinkController.js" type="text/javascript">
- </script>
+  <!-- <script src="/<?php echo base_url();?>assets/js/Common/ProjectStatusController.js" type="text/javascript"></script> -->
+  
+  
+  
 
- <script src="/<?php echo base_url();?>assets/js/Common/AssignmentsController.js" type="text/javascript">
- </script>
+
+  
+  
+  
  
- <script src="/<?php echo base_url();?>assets/js/Common/TodayAppointmentsController.js" type="text/javascript">
- </script>
-<script src="/<?php echo base_url();?>assets/js/Common/CityController.js" type="text/javascript">
- </script>
- <script src="/<?php echo base_url();?>assets/js/Common/BusinessTransactionController.js" type="text/javascript">
- </script>
+ 
+  
+  
+  
+  
+ 
+  
 
 	</body>
 </html>

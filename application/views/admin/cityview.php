@@ -204,4 +204,4 @@ include('Layouts/adminLayout_Header.php');
 include('Layouts/adminLayout_Footer.php');
 ?>
    
-
+<script src="/<?php echo base_url();?>assets/js/Common/CityController.js" type="text/javascript"></script>

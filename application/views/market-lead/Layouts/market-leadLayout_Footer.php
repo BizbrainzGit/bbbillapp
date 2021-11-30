@@ -56,29 +56,6 @@ var base_url={ baseurl:"/<?php echo base_url();?>" };
     <script src="/<?php echo base_url();?>assets/js/gobalSettings.js"></script> 
     <script src="/<?php echo base_url();?>assets/js/Common/common.js"></script>
     <script src="/<?php echo base_url();?>assets/js/Common/LoginController.js"></script>
-     <script src="/<?php echo base_url();?>assets/js/Common/BusinessController.js" type="text/javascript"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/BusinessCPselectedController.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/BusinessSelectedPackageController.js" type="text/javascript"></script>
-   
-    <script src="/<?php echo base_url();?>assets/js/Common/MarketleadTodayAllAppointmentsController.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/PromocodeController.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/LeadsController.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/DealClosedController.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/GFormController.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/DashboardController.js" type="text/javascript">
- </script> 
- <script src="/<?php echo base_url();?>assets/js/Common/EmailSendDemolinksController.js" type="text/javascript">
- </script> 
-  <script src="/<?php echo base_url();?>assets/js/Common/LoginReportController.js" type="text/javascript">
- </script>
-  <script src="/<?php echo base_url();?>assets/js/Common/AssignmentsController.js" type="text/javascript">
-    </script>
-
-<script src="/<?php echo base_url();?>assets/js/Common/BusinessTransactionController.js" type="text/javascript">
- </script>
- 
-<script src="/<?php echo base_url();?>assets/js/Common/SendLinkController.js" type="text/javascript">
- </script> 
 	</body>
 </html>
 

@@ -35,33 +35,6 @@ include('Layouts/marketLayout_Header.php');
             </div>
           </div>
         </div>
-<!-- <div class="content-wrapper " id="">
-          <div class="row">
-            <div class="col-12">
-              <div class="card">
-                <div class="card-body">
-                   <h2 style="text-align: center;">G - Form Data Entry</h2>
-                    
-                  
-                  <div class="row">
-                    <div class="col-12">
-                      <div class="table-responsive">
-                        <table id="employeestable" class="table table-hover">
-                    
-                        </table>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
-
-
-
-
-
 
   <div class="footer-wrapper">
             <footer class="footer">
@@ -219,5 +192,4 @@ include('Layouts/marketLayout_Header.php');
 <?php
 include('Layouts/marketLayout_Footer.php');
 ?>
-   
-
+<script src="/<?php echo base_url();?>assets/js/Common/GFormController.js"></script>

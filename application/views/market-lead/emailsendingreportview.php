@@ -65,4 +65,4 @@ include('Layouts/market-leadLayout_Header.php');
 include('Layouts/market-leadLayout_Footer.php');
 ?>
    
-
+ <script src="/<?php echo base_url();?>assets/js/Common/EmailSendDemolinksController.js" type="text/javascript"></script> 

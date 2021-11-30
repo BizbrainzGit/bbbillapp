@@ -26,7 +26,7 @@ ini_set('session.gc_divisor',100);
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = ' ';
+$config['base_url'] = 'bbbillapp/';
 
 /*
 |--------------------------------------------------------------------------
@@ -531,8 +531,8 @@ $config['smtpsettings'] = Array(
 		'protocol' => 'smtp',
 		'smtp_host' => 'ssl://smtp.googlemail.com',
 		'smtp_port' => 465,
-		'smtp_user' => 'bizbrainz2020@gmail.com',
-        'smtp_pass' => 'Bbhyd@4321',
+		'smtp_user' => 'bizbrainzoffice@gmail.com',
+        'smtp_pass' => 'bizbrainz@2021',
 		'mailtype'  => 'html', 
 		'charset'   => 'UTF-8',
 		'wordwrap' => TRUE
@@ -542,12 +542,13 @@ $config['smtpsettingslive'] = Array(
 		'protocol' => 'smtp',
 		'smtp_host' => 'ssl://smtp.googlemail.com',
 		'smtp_port' => 465,
-		'smtp_user' => 'bizbrainz2020@gmail.com',
-        'smtp_pass' => 'Bbhyd@4321',
+		'smtp_user' => 'bizbrainzoffice@gmail.com',
+        'smtp_pass' => 'bizbrainz@2021',
 		'mailtype'  => 'html', 
 		'charset'   => 'UTF-8',
 		'wordwrap' => TRUE
 	);    
+
 $config['environment'] = 'live';  
 
 //JWT Key 
@@ -563,3 +564,5 @@ $config['DISPLAY_CURRENCY'] = 'INR';
 
 $config['RAZOR_KEY_ID']='rzp_live_aZGImGaExUDAFj';
 $config['RAZOR_KEY_SECRET']='GbcmjFrQnj6uk6zEcqA6aYF5';
+
+date_default_timezone_set('Asia/Kolkata');

@@ -704,6 +704,8 @@ include('Layouts/adminLayout_Header.php');
 include('Layouts/adminLayout_Footer.php');
 ?>
 
+<script src="/<?php echo base_url();?>assets/js/Common/BusinessSelectedPackageController.js" type="text/javascript"></script>
+
 <script type="text/javascript">
 $('#search_businessseletedpackage_fromdate').datepicker({
       todayHighlight: true,

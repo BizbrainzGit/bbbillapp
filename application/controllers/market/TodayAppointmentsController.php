@@ -1,5 +1,6 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
-
+error_reporting(0);
+ob_start();
 include_once(APPPATH.'controllers/market/BaseController.php');
 use Illuminate\Database\Query\Expression as raw;
 use Illuminate\Database\Capsule\Manager as Capsule;
@@ -202,60 +203,60 @@ public function savePackagesData(){
                 $business_mobileno                         = $this->input->post("market_edit_business_mobileno");
                 $business_email                            = $this->input->post("market_edit_business_email");
                 $business_gstno                            = $this->input->post("market_edit_business_gstno");
-
+                $business_status                           = $this->input->post("market_add_packages_status");
 
 
                      $business_campaign    = $this->input->post("add_business_campaign");
                      $business_package     = $this->input->post("add_business_package");
 
-               $business_accountno = $this->input->post("market_add_packages_accountno");
-                if(isset($business_accountno) && !empty($business_accountno)){
-                    $business_accountno=$business_accountno;
-                }else{
-                    $business_accountno=0;
-                }
+               // $business_accountno = $this->input->post("market_add_packages_accountno");
+               //  if(isset($business_accountno) && !empty($business_accountno)){
+               //      $business_accountno=$business_accountno;
+               //  }else{
+               //      $business_accountno=0;
+               //  }
 
-                $business_acholdername                         = $this->input->post("market_add_packages_acholdername");
+               //  $business_acholdername                         = $this->input->post("market_add_packages_acholdername");
 
-                if(isset($business_acholdername) && !empty($business_acholdername)){
-                    $business_acholdername=$business_acholdername;
-                }else{
-                    $business_acholdername=null;
-                }
-                $business_bankname                             = $this->input->post("market_add_packages_bankname");
-                if(isset($business_bankname) && !empty($business_bankname)){
-                    $business_bankname=$business_bankname;
-                }else{
-                    $business_bankname=null;
-                }
-                $business_ifsccode                             = $this->input->post("market_add_packages_ifsccode");
+               //  if(isset($business_acholdername) && !empty($business_acholdername)){
+               //      $business_acholdername=$business_acholdername;
+               //  }else{
+               //      $business_acholdername=null;
+               //  }
+               //  $business_bankname                             = $this->input->post("market_add_packages_bankname");
+               //  if(isset($business_bankname) && !empty($business_bankname)){
+               //      $business_bankname=$business_bankname;
+               //  }else{
+               //      $business_bankname=null;
+               //  }
+               //  $business_ifsccode                             = $this->input->post("market_add_packages_ifsccode");
 
-                if(isset($business_ifsccode) && !empty($business_ifsccode)){
-                    $business_ifsccode=$business_ifsccode;
-                }else{
-                    $business_ifsccode=null;
-                }
+               //  if(isset($business_ifsccode) && !empty($business_ifsccode)){
+               //      $business_ifsccode=$business_ifsccode;
+               //  }else{
+               //      $business_ifsccode=null;
+               //  }
 
-                $business_bankcity                             = $this->input->post("market_add_packages_bankcity");
-                if(isset($business_bankcity) && !empty($business_bankcity)){
-                    $business_bankcity=$business_bankcity;
-                }else{
-                    $business_bankcity=null;
-                }
-                $business_branchname                           = $this->input->post("market_add_packages_branchname");
-                if(isset($business_branchname) && !empty($business_branchname)){
-                    $business_branchname=$business_branchname;
-                }else{
-                    $business_branchname=null;
-                }
+               //  $business_bankcity                             = $this->input->post("market_add_packages_bankcity");
+               //  if(isset($business_bankcity) && !empty($business_bankcity)){
+               //      $business_bankcity=$business_bankcity;
+               //  }else{
+               //      $business_bankcity=null;
+               //  }
+               //  $business_branchname                           = $this->input->post("market_add_packages_branchname");
+               //  if(isset($business_branchname) && !empty($business_branchname)){
+               //      $business_branchname=$business_branchname;
+               //  }else{
+               //      $business_branchname=null;
+               //  }
 
-                $business_acctype                              = $this->input->post("market_add_packages_acctype");
+               //  $business_acctype                              = $this->input->post("market_add_packages_acctype");
 
-                if(isset($business_acctype) && !empty($business_acctype)){
-                    $business_acctype1=$business_acctype;
-                }else{
-                    $business_acctype1=0;
-                }
+               //  if(isset($business_acctype) && !empty($business_acctype)){
+               //      $business_acctype1=$business_acctype;
+               //  }else{
+               //      $business_acctype1=0;
+               //  }
                
                  $business_uppersale_amount     = $this->input->post("market_add_packages_uppersale_amount");
                        if(isset($business_uppersale_amount) && !empty($business_uppersale_amount)){
@@ -277,6 +278,7 @@ public function savePackagesData(){
                     }else{
                         $packages_total=0;
                     }
+
                 $packages_discountamount                      = $this->input->post("market_add_packages_discountamount");
 
                 if(isset($packages_discountamount) && !empty($packages_discountamount)){
@@ -284,6 +286,7 @@ public function savePackagesData(){
                     }else{
                         $packages_discountamount=0;
                     }
+
                 $packages_grandtotal                          = $this->input->post("market_add_packages_grandtotal");
                  if(isset($packages_grandtotal) && !empty($packages_grandtotal)){
                         $packages_grandtotal=$packages_grandtotal;
@@ -353,33 +356,31 @@ public function savePackagesData(){
                          $business_payment_mode=0;
                     }
 
-                     $debitcardno                                 = $this->input->post("market_add_packages_debitcardno");
-                     if(isset($debitcardno) && !empty($debitcardno)){
-                        $debitcardno=$debitcardno;
-                    }else{
-                        $debitcardno=0;
-                    }
-                     $debitcardexpireddate                        = $this->input->post("market_add_packages_debitcard_expireddate");
-                      if(empty($debitcardexpireddate)){
-                        $debitcard_expireddate                     = null;
-                        }else{
-                        $debitcard_expireddate                     = date("Y-m-d", strtotime($debitcardexpireddate) );
-                       }    
-                     
+                    //  $debitcardno                                 = $this->input->post("market_add_packages_debitcardno");
+                    //  if(isset($debitcardno) && !empty($debitcardno)){
+                    //     $debitcardno=$debitcardno;
+                    // }else{
+                    //     $debitcardno=0;
+                    // }
+                     // $debitcardexpireddate                        = $this->input->post("market_add_packages_debitcard_expireddate");
+                     //  if(empty($debitcardexpireddate)){
+                     //    $debitcard_expireddate                     = null;
+                     //    }else{
+                     //    $debitcard_expireddate                     = date("Y-m-d", strtotime($debitcardexpireddate) );
+                     //   }    
+                    //  $creditcardno                                = $this->input->post("market_add_packages_creditcardno");
+                    //  if(isset($creditcardno) && !empty($creditcardno)){
+                    //     $creditcardno=$creditcardno;
+                    // }else{
+                    //     $creditcardno=0;
+                    // }
+                    //  $creditcardexpireddate                       = $this->input->post("market_add_packages_creditcard_expireddate");
 
-                     $creditcardno                                = $this->input->post("market_add_packages_creditcardno");
-                     if(isset($creditcardno) && !empty($creditcardno)){
-                        $creditcardno=$creditcardno;
-                    }else{
-                        $creditcardno=0;
-                    }
-                     $creditcardexpireddate                       = $this->input->post("market_add_packages_creditcard_expireddate");
-
-                      if(empty($creditcardexpireddate)){
-                        $creditcard_expireddate                     = null;
-                        }else{
-                          $creditcard_expireddate                     = date("Y-m-d", strtotime($creditcardexpireddate) );
-                       } 
+                    //   if(empty($creditcardexpireddate)){
+                    //     $creditcard_expireddate                     = null;
+                    //     }else{
+                    //       $creditcard_expireddate                     = date("Y-m-d", strtotime($creditcardexpireddate) );
+                    //    } 
 
                    
 
@@ -480,35 +481,170 @@ public function savePackagesData(){
 
                     $txnid = time(); 
                 if($business_payment_mode==1){
+                    $cashamount = $this->input->post("market_add_packages_cashamount");
+                     if(empty($cashamount)){
+                               $cashamount = 0.00;
+                        }else{
+                          $cashamount = $cashamount;
+                       }
+                     $cashdate = $this->input->post("market_add_packages_cashdate");
+                     if(empty($cashdate)){
+                              $cashdate  = null;
+                        }else{
+                          $cashdate = date("Y-m-d", strtotime($cashdate) );
+                       } 
+                     $personame = $this->input->post("market_add_packages_personame");
+                     $placename = $this->input->post("market_add_packages_placename");
+
+
                      $order_id="BB_CASH_".$txnid;
                      $status="SUCCESS";
                      $amount=$cashamount; 
+
                 }else if($business_payment_mode==4){
+                     $upiname = $this->input->post("market_add_packages_upiname");
+                     $upiid  = $this->input->post("market_add_packages_upiid");
+                     $upiphonenumber = $this->input->post("market_add_packages_upiphonenumber");
+                     $upiphoto = $this->input->post("market_add_packages_upiphoto");
+                    
+                    $upiamount = $this->input->post("market_add_packages_upiamount");
+                     if(empty($upiamount)){
+                            $upiamount = 0.00;
+                        }else{
+                          $upiamount = $upiamount;
+                       }
+
+                  $upiphoto= isset($_FILES['market_add_packages_upiphoto']['tmp_name'])?$_FILES['market_add_packages_upiphoto']['tmp_name']:'';
+                    if(!empty($upiphoto))
+                      {
+                        $target_dir = "assets/uploads/cheques/";
+                        $target_file = $target_dir .basename($_FILES["market_add_packages_upiphoto"]["name"]);
+                        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+                        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG")
+                            {
+                            echo json_encode(array('success'=>false,'message'=>IMAGE_TYPE_ERR));
+                            return;
+                        } 
+                        $temp=rand(0,100000).'_';  
+                        $targetPath = FCPATH.$target_dir.$temp.$_FILES['market_add_packages_upiphoto']['name'];
+                        if(move_uploaded_file($upiphoto,$targetPath)){
+                           $imagepath ="assets/uploads/cheques/";
+                           $upi_image=$imagepath.$temp.$_FILES['market_add_packages_upiphoto']['name'];
+                        } else{
+                            echo json_encode(array('success'=>false,'message'=>IMAGE_TYPE_ERR));
+                            return;
+                        }
+                        
+                    }else{
+                        
+                        $upi_image=null;
+                    }
                      $order_id="BB_UPI_".$txnid;
                      $status="SUCCESS";
                      $amount=$upiamount;
-                }else if($business_payment_mode==5){
-                     $order_id="BB_PAYTM_".$txnid;
-                     $status="SUCCESS";
-                     $amount=$paytmamount;
+
                 }else if($business_payment_mode==6){
+
+                      
+                     $chequeno = $this->input->post("market_add_packages_chequeno");
+                      if(isset($chequeno) && !empty($chequeno)){
+                          $chequeno=$chequeno;
+                       }else{
+                        $chequeno=0;
+                      }
+                     $chequeissuedate                            = $this->input->post("market_add_packages_chequeissuedate");
+                     if(empty($chequeissuedate)){
+                        $chequeissuedate                         = null;
+                        }else{
+                          $chequeissuedate                       = date("Y-m-d", strtotime($chequeissuedate) );
+                       } 
+                     $cheque_bankname                            = $this->input->post("market_add_packages_cheque_bankname");
+                    $chequeamount                            = $this->input->post("market_add_packages_chequeamount");
+                     if(empty($chequeamount)){
+                        $chequeamount                        = 0.00;
+                        }else{
+                          $chequeamount                      = $chequeamount;
+                       }
+                      $cheque_photo= isset($_FILES['market_add_packages_cheque_photo']['tmp_name'])?$_FILES['market_add_packages_cheque_photo']['tmp_name']:'';
+                        if(!empty($cheque_photo))
+                          {
+                            $target_dir = "assets/uploads/cheques/";
+                            $target_file = $target_dir .basename($_FILES["market_add_packages_cheque_photo"]["name"]);
+                            $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+                            if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG")
+                                {
+                                echo json_encode(array('success'=>false,'message'=>IMAGE_TYPE_ERR));
+                                return;
+                            } 
+                            $temp=rand(0,100000).'_';  
+                            $targetPath = FCPATH.$target_dir.$temp.$_FILES['market_add_packages_cheque_photo']['name'];
+                            if(move_uploaded_file($cheque_photo,$targetPath)){
+                               $imagepath ="assets/uploads/cheques/";
+                              $cheque_image=$imagepath.$temp.$_FILES['market_add_packages_cheque_photo']['name'];
+                            } else{
+                                echo json_encode(array('success'=>false,'message'=>IMAGE_TYPE_ERR));
+                                return;
+                            }
+                            
+                        }else{
+                            
+                            $cheque_image=null;
+                        } 
                       $order_id="BB_CHEQUE_".$txnid;
                       $status="SUCCESS";
-                      $amount=$chequeamount;    
+                      $amount=$chequeamount;
+
                 }else if($business_payment_mode==7){
+
+
+                     $neftnumber = $this->input->post("market_add_packages_neftnumber");
+                         $neftamount = $this->input->post("market_add_packages_neftamount");
+                      if(empty($neftamount)){
+                           $neftamount  = 0.00;
+                        }else{
+                          $neftamount = $neftamount;
+                       }
+
+                       $neftphoto= isset($_FILES['market_add_packages_neftphoto']['tmp_name'])?$_FILES['market_add_packages_neftphoto']['tmp_name']:'';
+                    if(!empty($neftphoto))
+                      {
+                        $target_dir = "assets/uploads/cheques/";
+                        $target_file = $target_dir .basename($_FILES["market_add_packages_neftphoto"]["name"]);
+                        $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+                        if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG")
+                            {
+                            echo json_encode(array('success'=>false,'message'=>IMAGE_TYPE_ERR));
+                            return;
+                        } 
+                        $temp=rand(0,100000).'_';  
+                        $targetPath = FCPATH.$target_dir.$temp.$_FILES['market_add_packages_neftphoto']['name'];
+                        if(move_uploaded_file($neftphoto,$targetPath)){
+                           $imagepath ="assets/uploads/cheques/";
+                           $neft_image=$imagepath.$temp.$_FILES['market_add_packages_neftphoto']['name'];
+                        } else{
+                            echo json_encode(array('success'=>false,'message'=>IMAGE_TYPE_ERR));
+                            return;
+                        }
+                        
+                    }else{
+                        
+                        $neft_image=null;
+                    }
+
                       $order_id="BB_NEFT_".$txnid;
                       $status="SUCCESS";
-                      $amount=$neftamount;    
+                      $amount=$neftamount;  
+
+
                 }else if($business_payment_mode==8){
                       $razorpayorder_id  = $this->input->post("razorpay_select_payment_order_id");
                 }
+
+
+
             
-             $business_status = $this->input->post("market_add_packages_status");
-                if(isset($business_status) && !empty($business_status)){
-                    $business_status=$business_status;
-                }else{
-                    $business_status=0;
-                }
+      
+               
 
         $perviousid=BusinessPayments_model::orderBy('id','desc')->first();
         $pervious_business_package_id = $perviousid['business_package_id'];
@@ -543,52 +679,7 @@ public function savePackagesData(){
                                   $postData = dataFieldValidation($package_id, "Package", $package,"package_id", "", $postData, "packagearray".$key);
                                 }
                         }
-
          
-
-        $sourcePath2= isset($_FILES['market_add_packages_cheque_photo']['tmp_name'])?$_FILES['market_add_packages_cheque_photo']['tmp_name']:'';
-                
-            if(!empty($sourcePath2))
-            {
-                
-                $target_dir = "assets/uploads/cheques/";
-                $target_file = $target_dir.basename($_FILES["market_add_packages_cheque_photo"]["name"]);
-                $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-               
-             //   $fileinfo = @getimagesize($_FILES["add_business_photo"]["tmp_name"]);
-    //            $width = $fileinfo[0];
-    //            $height = $fileinfo[1];
-
-                // $check = $_FILES["add_business_photo"]["size"];
-                //  if($width =! "1200" || $height =! "400"){
-                //  echo json_encode(array('success'=>false,'message'=>FILE_SIZE_ERR));
-                //  return;
-                // }
-                if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "JPG")
-                    {
-                    echo json_encode(array('success'=>false,'message'=>IMAGE_TYPE_ERR));
-                    return;
-                } 
-                 
-                $temp=rand(0,100000).'_';  
-                $targetPath = FCPATH.$target_dir.$temp.$_FILES['market_add_packages_cheque_photo']['name']; // Target path where file is to be stored
-                
-                if(move_uploaded_file($sourcePath2,$targetPath)){
-
-                $imagepath ="assets/uploads/cheques/";
-                $cheque_image=$imagepath.$temp.$_FILES['market_add_packages_cheque_photo']['name'];
-
-                } else{
-                    echo json_encode(array('success'=>false,'message'=>IMAGE_TYPE_ERR));
-                    return;
-                }
-                
-            }else{
-                
-                $cheque_image=null;
-                
-                
-            }
 
          $marketing_add_package_otp  = $this->input->post("marketing_add_package_otp"); 
              if(isset($marketing_add_package_otp) && !empty($marketing_add_package_otp)){
@@ -600,6 +691,13 @@ public function savePackagesData(){
          $change_status           = $business_status;
          $assignment_id           = $this->input->post("market_add_packages_assignment_id");
          $assignment_message      = $this->input->post("market_add_packages_status_msg"); 
+         $next_followupdate       = $this->input->post("market_add_packages_next_followup_date"); 
+           if(empty($next_followupdate)){
+                        $next_followupdate                         = null;
+                        }else{
+                          $next_followupdate                       = date("Y-m-d", strtotime($next_followupdate) );
+                       } 
+
          $is_update=1;          
            
            $packagesdata = [];
@@ -626,13 +724,13 @@ public function savePackagesData(){
 
           
 
-          $postData = dataFieldValidation($business_accountno, "Account Number",$packagesdata,"account_number","",$postData,"packagesdataarray");
-         $postData = dataFieldValidation($business_acholdername, "Account holder Name",$packagesdata,"account_holder_name","", $postData,"packagesdataarray");
-         $postData = dataFieldValidation($business_bankname, "Bank Name ",$packagesdata,"bank_name","", $postData,"packagesdataarray");
-         $postData = dataFieldValidation($business_ifsccode, "IFSC code",$packagesdata,"ifsc_code","", $postData,"packagesdataarray");
-         $postData = dataFieldValidation($business_bankcity, "Bank City",$packagesdata,"bank_city","", $postData,"packagesdataarray");
-         $postData = dataFieldValidation($business_branchname, "Branch Name",$packagesdata,"branch_name","",$postData,"packagesdataarray");
-         $postData = dataFieldValidation($business_acctype1, "Account Type",$packagesdata,"account_type","",$postData,"packagesdataarray");
+         //  $postData = dataFieldValidation($business_accountno, "Account Number",$packagesdata,"account_number","",$postData,"packagesdataarray");
+         // $postData = dataFieldValidation($business_acholdername, "Account holder Name",$packagesdata,"account_holder_name","", $postData,"packagesdataarray");
+         // $postData = dataFieldValidation($business_bankname, "Bank Name ",$packagesdata,"bank_name","", $postData,"packagesdataarray");
+         // $postData = dataFieldValidation($business_ifsccode, "IFSC code",$packagesdata,"ifsc_code","", $postData,"packagesdataarray");
+         // $postData = dataFieldValidation($business_bankcity, "Bank City",$packagesdata,"bank_city","", $postData,"packagesdataarray");
+         // $postData = dataFieldValidation($business_branchname, "Branch Name",$packagesdata,"branch_name","",$postData,"packagesdataarray");
+         // $postData = dataFieldValidation($business_acctype1, "Account Type",$packagesdata,"account_type","",$postData,"packagesdataarray");
          
       
 
@@ -643,50 +741,29 @@ public function savePackagesData(){
          $postData = dataFieldValidation($add_package_otp, "OTP",$paymenttransactiondata,"otp_no","", $postData,"paymenttransactionarray");
          $postData = dataFieldValidation($business_payment_mode, "Business Payment Mode",$paymenttransactiondata,"payment_mode_id","", $postData,"paymenttransactionarray");
 
-        $postData = dataFieldValidation($debitcardno, "Debit Card Number",$paymenttransactiondata,"debitcard_number","", $postData,"paymenttransactionarray");
-                     
-        $postData = dataFieldValidation($debitcard_expireddate, "Debit Card Expired Date",$paymenttransactiondata,"debitcard_expireddate","", $postData,"paymenttransactionarray");
+       $postData = dataFieldValidation($upiname, "UPI Name",$paymenttransactiondata,"upi_name","", $postData,"paymenttransactionarray");
+        $postData = dataFieldValidation($upiid, "Upi Id",$paymenttransactiondata,"upi_id","", $postData,"paymenttransactionarray");
+        $postData = dataFieldValidation($upiphonenumber, "UPI Phone Number",$paymenttransactiondata,"upi_phone_number","", $postData,"paymenttransactionarray");
+        $postData = dataFieldValidation($upiamount, "UPI Amount",$paymenttransactiondata,"upi_amount","", $postData,"paymenttransactionarray");
+       $postData = dataFieldValidation($upi_image, "UPI Photo",$paymenttransactiondata,"upi_photo","", $postData,"paymenttransactionarray");
 
-        $postData = dataFieldValidation($creditcardno, "Credit Card Number",$paymenttransactiondata,"creditcard_number","", $postData,"paymenttransactionarray");
-
-        $postData = dataFieldValidation($creditcard_expireddate, "Credit Card Expired Date",$paymenttransactiondata,"creditcard_expireddate","", $postData,"paymenttransactionarray");
-
-        $postData = dataFieldValidation($upi, "UPI",$paymenttransactiondata,"upi","", $postData,"paymenttransactionarray");
-
-        $postData = dataFieldValidation($phonepay, "Phone Pay",$paymenttransactiondata,"phonepay","", $postData,"paymenttransactionarray");
-
-        $postData = dataFieldValidation($amazonpay, "Amazon Pay",$paymenttransactiondata,"amazonpay","", $postData,"paymenttransactionarray");
-
-        $postData = dataFieldValidation($googlepay, "Google Pay",$paymenttransactiondata,"googlepay","", $postData,"paymenttransactionarray");
-                     
-       $postData = dataFieldValidation($paytm_upi, "PayTm UPi",$paymenttransactiondata,"paytm_upi","", $postData,"paymenttransactionarray");
 
        $postData = dataFieldValidation($chequeno, "Cheque Number",$paymenttransactiondata,"cheque_number","", $postData,"paymenttransactionarray");
-
-       $postData = dataFieldValidation($chequeaccountno, "Account Number",$paymenttransactiondata,"cheque_account_no","", $postData,"paymenttransactionarray");
-
-       $postData = dataFieldValidation($chequeholdername, "Cheque Holder Name",$paymenttransactiondata,"cheque_holder_name","", $postData,"paymenttransactionarray");
-
        $postData = dataFieldValidation($chequeissuedate, "Cheque Issue Date",$paymenttransactiondata,"cheque_issue_date","", $postData,"paymenttransactionarray");
-
-
        $postData = dataFieldValidation($cheque_bankname, "Cheque Bank Name",$paymenttransactiondata,"cheque_bankname","", $postData,"paymenttransactionarray");
+       $postData = dataFieldValidation($cheque_image, "Cheque Photo",$paymenttransactiondata,"cheque_photo","", $postData,"paymenttransactionarray");
 
-      $postData = dataFieldValidation($cheque_ifsc, "Cheque IFSC",$paymenttransactiondata,"cheque_ifsc","", $postData,"paymenttransactionarray");
-                     
-      $postData = dataFieldValidation($cheque_micr, "Cheque MICR",$paymenttransactiondata,"cheque_micr","", $postData,"paymenttransactionarray");
-
-      $postData = dataFieldValidation($cheque_image, "Cheque Photo",$paymenttransactiondata,"cheque_photo","", $postData,"paymenttransactionarray");
       
        $postData = dataFieldValidation($cashamount, "Cash Amount",$paymenttransactiondata,"cash_amount","", $postData,"paymenttransactionarray");
-
        $postData = dataFieldValidation($cashdate , "Cash Date",$paymenttransactiondata,"cash_date","", $postData,"paymenttransactionarray");
+       $postData = dataFieldValidation($personame, "Cash Person Name",$paymenttransactiondata,"cash_personname","", $postData,"paymenttransactionarray");
+       $postData = dataFieldValidation($placename, "Cash Place/City Name",$paymenttransactiondata,"cash_place","", $postData,"paymenttransactionarray");
+      
 
-      $postData = dataFieldValidation($personame, "Cash Person Name",$paymenttransactiondata,"cash_personname","", $postData,"paymenttransactionarray");
-                     
-      $postData = dataFieldValidation($placename, "Cash Place/City Name",$paymenttransactiondata,"cash_place","", $postData,"paymenttransactionarray");
-
-      $postData = dataFieldValidation($neftnumber, "NEFT /IMPS ",$paymenttransactiondata,"neft_number","", $postData,"paymenttransactionarray"); 
+      $postData = dataFieldValidation($neftnumber, "NEFT /IMPS Number ",$paymenttransactiondata,"neft_number","", $postData,"paymenttransactionarray");
+      $postData = dataFieldValidation($neft_image, "NEFT /IMPS Image",$paymenttransactiondata,"neft_photo","", $postData,"paymenttransactionarray");
+      $postData = dataFieldValidation($neftamount, "NEFT /IMPS Amount ",$paymenttransactiondata,"neft_amount","", $postData,"paymenttransactionarray"); 
+      
       
       $businessdata = [];
          $postData = dataFieldValidation($business_cname, "Company Name",$businessdata,"company_name","",$postData,"businessdataarray");
@@ -697,9 +774,10 @@ public function savePackagesData(){
           $postData = dataFieldValidation($business_email, "Email",$businessdata,"email","",$postData,"businessdataarray");
          
           $postData = dataFieldValidation($business_gstno, "GST Number",$businessdata,"gst_number","", $postData,"businessdataarray");
-        
+         $postData = dataFieldValidation($business_status, "Business status ",$businessdata,"business_status_id","", $postData,"businessdataarray");
  
         $businessadressdata = [];
+
         $postData = dataFieldValidation($business_hno, "Building Number",$businessadressdata,"house_no","", $postData,"businessAddressarray");
          $postData = dataFieldValidation($business_street, "Street",$businessadressdata,"street","", $postData,"businessAddressarray");
         
@@ -716,10 +794,7 @@ public function savePackagesData(){
         $postData = dataFieldValidation($assignment_message, "Meassage",$marketassignment,"marketing_message","",$postData,"marketassignmentarray"); 
         $postData = dataFieldValidation($change_status, "Assignment Status",$marketassignment,"assignment_status","",$postData,"marketassignmentarray");
         $postData = dataFieldValidation($is_update, "Update Value",$marketassignment,"is_update","",$postData,"marketassignmentarray");
-
-      
-
-      
+        $postData = dataFieldValidation($next_followupdate, "Next Followup Date",$marketassignment,"next_followup_date","",$postData,"marketassignmentarray");
 
         if(isset($postData['errorslist']) && count($postData['errorslist'])>0){
             echo json_encode(array('success'=>false,'message'=>$postData['errorslist']));
@@ -774,17 +849,17 @@ public function savePackagesData(){
           if(strlen($razorpayorder_id)>0){
               $paymenttransactionarray = array_merge(array('business_payments_id'=>$addPackagesid,'otp_no'=>$add_package_otp,'payment_mode_id'=>$business_payment_mode),$updatedlog);
               $paymenttransaction=$this->BusinessPaymentTransaction_model->UpdatePaymentTransaction($paymenttransactionarray,$razorpayorder_id); 
-              $getTransactionOrderId=$this->BusinessPaymentTransaction_model->getTransactionOrderId($razorpayorder_id);
-               $transaction_amount= $getTransactionOrderId[0]->transaction_amount;
-               $transaction_status= $getTransactionOrderId[0]->transaction_status;
+              // $getTransactionOrderId=$this->BusinessPaymentTransaction_model->getTransactionOrderId($razorpayorder_id);
+              //  $transaction_amount= $getTransactionOrderId[0]->transaction_amount;
+              //  $transaction_status= $getTransactionOrderId[0]->transaction_status;
               }else{
              $userId = $this->ion_auth->get_user_id();
              $createdlog=isCreatedLog($userId);
              $paymenttransactionarray = array_merge(array('business_payments_id'=>$addPackagesid),$postData['dbinput']['paymenttransactionarray'],$createdlog);
              $paymenttransaction=$this->BusinessPaymentTransaction_model->addBPaymentTransaction($paymenttransactionarray); 
-             $getTransactionOrderId=$this->BusinessPaymentTransaction_model->getTransactionOrderId($order_id); 
-         $transaction_amount= $getTransactionOrderId[0]->transaction_amount;
-         $transaction_status= $getTransactionOrderId[0]->transaction_status;
+         //     $getTransactionOrderId=$this->BusinessPaymentTransaction_model->getTransactionOrderId($order_id); 
+         // $transaction_amount= $getTransactionOrderId[0]->transaction_amount;
+         // $transaction_status= $getTransactionOrderId[0]->transaction_status;
             }
             
             }
@@ -799,15 +874,15 @@ public function savePackagesData(){
                   $business_mobileno = $Businessdata[0]->mobile_no;
                   $business_cname = $Businessdata[0]->company_name;
                  
-        $subject='Feedback';
-        $url = getHostURL(true).'feedback?id='.$business_id;
-        $name=$Businessemail['company_name'];
-        $hiuser = ucfirst($name);
-        $body=Customdata_model::where('content_type','=','Feedback')->first()->content;
-        $body=str_replace("{CompanyName}",$hiuser,$body);
-        $body=str_replace("{URL}",$url,$body);
-        // $body.="<br> <p>For any query, please call Mr KRISHNA CHOWDARY PURIMETLA at 9739989333.</p> ";
-        sendEmail("info@bizbrainz.in","Administrator",$business_email, $subject,$body); 
+        // $subject='Feedback';
+        // $url = getHostURL(true).'feedback?id='.$business_id;
+        // $name=$Businessemail['company_name'];
+        // $hiuser = ucfirst($name);
+        // $body=Customdata_model::where('content_type','=','Feedback')->first()->content;
+        // $body=str_replace("{CompanyName}",$hiuser,$body);
+        // $body=str_replace("{URL}",$url,$body);
+        // // $body.="<br> <p>For any query, please call Mr KRISHNA CHOWDARY PURIMETLA at 9739989333.</p> ";
+        // sendEmail("info@bizbrainz.in","Administrator",$business_email, $subject,$body); 
              if($business_status==12){
                    $id = $addPackagesid;
                  // $export_type = $this->input->post("export_type");
@@ -858,28 +933,28 @@ public function savePackagesData(){
                     $receiptbody1=Customdata_model::where('content_type','=','Receipt')->first()->content;
                     $receiptbody1=str_replace("{CompanyName}",$hiuser,$receiptbody1);
                     $attachments='assets/downloads/'.$filename; 
-                 $x=sendEmail("bizbrainz2020@gmail.com","Administrator",$business_email,$receiptsubject1,$receiptbody1,$attachments);
+                 $x=sendEmail($business_email,$receiptsubject1,$receiptbody1,$attachments);
                 }
                 
                
-                if($transaction_amount>=$grandtoatal && $transaction_status=='SUCCESS'){ 
-                 $userId = $this->ion_auth->get_user_id();
-                 $updatedlog=isUpdateLog($userId);
-                 $status=4;
-                 $statusupdatefordealclose = array_merge(array('business_status_id'=>$status),$updatedlog);
-                 $statusupdate=$this->Business_model->updateBusiness($statusupdatefordealclose,$business_id);
+                // if($transaction_amount>=$grandtoatal && $transaction_status=='SUCCESS'){ 
+                //  $userId = $this->ion_auth->get_user_id();
+                //  $updatedlog=isUpdateLog($userId);
+                //  $status=4;
+                //  $statusupdatefordealclose = array_merge(array('business_status_id'=>$status),$updatedlog);
+                //  $statusupdate=$this->Business_model->updateBusiness($statusupdatefordealclose,$business_id);
 
-                  $perviousid=BusinessPayments_model::orderBy('receipt_no','desc')->first();
-                    $number = $perviousid['receipt_no'];
-                    $a=explode("/",$number);
-                    $number=$a[2];
-                    $number++;
-                    $short_name=BB_INVOICE_NO;
-                    $id_number=str_pad($number, 4,"0", STR_PAD_LEFT);     
-                    $receipt_no = $short_name.$id_number;
-                    $receiptfordealclose = array_merge(array('receipt_no'=>$receipt_no),$updatedlog);
-                    $receiptupdate=$this->BusinessPayments_model->updateReceiptNo($receiptfordealclose,$addPackagesid); 
-                }  
+                //   $perviousid=BusinessPayments_model::orderBy('receipt_no','desc')->first();
+                //     $number = $perviousid['receipt_no'];
+                //     $a=explode("/",$number);
+                //     $number=$a[2];
+                //     $number++;
+                //     $short_name=BB_INVOICE_NO;
+                //     $id_number=str_pad($number, 4,"0", STR_PAD_LEFT);     
+                //     $receipt_no = $short_name.$id_number;
+                //     $receiptfordealclose = array_merge(array('receipt_no'=>$receipt_no),$updatedlog);
+                //     $receiptupdate=$this->BusinessPayments_model->updateReceiptNo($receiptfordealclose,$addPackagesid); 
+                // }  
 
                 echo json_encode(array('success'=>true,'message'=>SAVE_MSG));
                 return;

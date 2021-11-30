@@ -97,4 +97,4 @@ include('Layouts/tele-marketLayout_Header.php');
 include('Layouts/tele-marketLayout_Footer.php');
 ?>
    
-
+<script src="/<?php echo base_url();?>assets/js/Common/LeadsController.js"></script>

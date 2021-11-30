@@ -71,21 +71,22 @@ var packagesform = $("#add_packagesdata");
 packagesform.validate({
     errorPlacement: function errorPlacement(error, element) { element.before(error); },
     rules: {
-      // add_packages_companyname :"required",
-      // add_business_campaign :"required",
+
+      add_packages_producttype :"required",
+      add_packages_status :"required",
       add_package_condition:"required",
-      add_packages_debitcardno:{number:true,minlength:5, maxlength:18},
-      add_packages_creditcardno:{number:true,minlength:5, maxlength:18},
+
+      add_packages_cashamount:{number:true},
+      add_packages_neftamount:{number:true},
+      add_packages_chequeamount:{number:true},
+      add_packages_upiamount:{number:true},
+      add_packages_upiphonenumber:{number:true,minlength:10, maxlength:12},
+      
       add_packages_chequeno:{number:true,minlength:4, maxlength:12},
       add_packages_cchequeno:{number:true,minlength:4, maxlength:12,equalTo:"#add_packages_chequeno"},
-      add_packages_cheque_micr:{number:true},
-      add_packages_accountno:{number:true,minlength:5, maxlength:20},
-      add_packages_caccountno: {number:true,minlength:5, maxlength:20,equalTo: "#add_business_accountno"},
-      add_packages_cacholdername: { equalTo: "#add_business_acholdername"},
-      add_business_phonepay:{number:true,minlength:10, maxlength:12},
-      add_business_amazonpay:{number:true,minlength:10, maxlength:12},
-      add_business_googlepay:{number:true,minlength:10, maxlength:12},
-    
+
+      
+      
     }
 });
 
@@ -97,7 +98,6 @@ packagesform.children("div").steps({
     transitionEffect: "slideLeft",
     onStepChanging: function (event, currentIndex, newIndex)
     {   
-
        
         if (currentIndex == 2) {
           var n = $("#add_business_package:checked").length;
@@ -107,40 +107,91 @@ packagesform.children("div").steps({
           }
         }
 
-            var search_website = $("#add_packages_businesskeyword:checked").val();
-         searchdemowebsitesByCategoryForPackages(search_website);
+          var search_website = $("#add_packages_businesskeyword:checked").val();
+          searchdemowebsitesByCategoryForPackages(search_website);
           var paymentmodeid = $("#add_business_payment_mode:checked").val();
-         
-         var add_business_creditcard_expireddate=$("#add_newbusiness_payment_mode").val();
-         var add_business_creditcardno=$("#add_business_creditcardno").val();
-         
-         if(paymentmodeid==3 && (!add_business_creditcard_expireddate || add_business_creditcard_expireddate.length<=0) && (!add_business_creditcardno ||  add_business_creditcardno.length<=0)){
-            alert("Please fill all Credit Card Mode options!!!");
-            return false;
+
+         if(paymentmodeid==6) {
+            var add_chequeamount=$("#add_packages_chequeamount").val();
+            var add_chequeno=$("#add_packages_chequeno").val();
+            var add_cchequeno=$("#add_packages_cchequeno").val();
+            var add_cheque_photo=$("#add_packages_cheque_photo").val();
+            if (add_chequeno.length<=0) {
+                 alert("Please fill Cheque Number");
+                 return false;
+             }
+            if (add_cchequeno.length<=0 && add_cchequeno!=add_chequeno) {
+                 alert("Please fill Confirm Cheque Number and Same As Cheque Number");
+                 return false;
+             }
+            if (add_cheque_photo.length<=0) {
+                 alert("Please Upload Cheque Photos");
+                 return false;
+             }
+            if (add_chequeamount.length<=0) {
+                 alert("Please fill Cheque Amount");
+                 return false;
+             } 
+
+         }
+
+         if(paymentmodeid==1) {
+            var add_cashamount=$("#add_packages_cashamount").val();
+            var add_personame=$("#add_packages_personame").val();
+            if (add_personame.length<=0) {
+                 alert("Please fill Person Name");
+                 return false;
+             }
+            if (add_cashamount.length<=0) {
+                 alert("Please fill Cash Amount");
+                 return false;
+             } 
+
+         }
+
+         if(paymentmodeid==4) {
+            var add_upiname=$("#add_packages_upiname").val();
+            var add_upiphonenumber=$("#add_packages_upiphonenumber").val();
+            var add_upiphoto=$("#add_packages_upiphoto").val();
+            var add_upiamount=$("#add_packages_upiamount").val();
+            if (add_upiname.length<=0) {
+                 alert("Please fill UPI Name");
+                 return false;
+             }
+          if (add_upiphonenumber.length<=0) {
+                 alert("Please fill UPI Phone Number");
+                 return false;
+             }
+            if (add_upiamount.length<=0) {
+                 alert("Please fill UPI Amount");
+                 return false;
+             } 
+            if (add_upiphoto.length<=0) {
+                 alert("Please Upload UPI Transction Photos");
+                 return false;
+             }
+
+         }
+
+         if(paymentmodeid==7) {
+            var add_neftnumber=$("#add_packages_neftnumber").val();
+            var add_neftamount=$("#add_packages_neftamount").val();
+            var add_neftphoto=$("#add_packages_neftphoto").val();
+            if (add_neftnumber.length<=0) {
+                 alert("Please fill NEFT Number");
+                 return false;
+             }
+            if (add_neftamount.length<=0) {
+                 alert("Please fill NEFT Amount");
+                 return false;
+             } 
+            if (add_neftphoto.length<=0) {
+                 alert("Please Upload NEFT Transction Photos");
+                 return false;
+             }
+
          }
          
-         var add_business_chequeaccountno=$("#add_packages_chequeaccountno").val();
-         var add_business_chequeno=$("#add_packages_chequeno").val();
-         var add_business_cchequeno=$("#add_packages_cchequeno").val();
-         var add_business_cheque_micr=$("#add_packages_cheque_micr").val();
-         var add_business_cheque_photo=$("#add_packages_cheque_photo").val();
-         var add_business_chequeissuedate=$("#add_packages_chequeissuedate").val();
-         
-         if(paymentmodeid==6 && (!add_business_chequeaccountno || add_business_chequeaccountno.length<=0) && (!add_business_chequeno ||  add_business_chequeno.length<=0) && (!add_business_cchequeno || add_business_cchequeno.length<=0) && (!add_business_cheque_micr || add_business_cheque_micr.length<=0) && (!add_business_cheque_photo || add_business_cheque_photo.length<=0) && (!add_business_chequeissuedate || add_business_chequeissuedate.length<=0)){
-            alert("Please fill all Cheque Mode options!!!");
-            return false;
-         }
-         
-         var add_business_cashamount=$("#add_packages_cashamount").val();
-         var add_business_cashdate=$("#add_packages_cashdate").val();
-         var add_business_personame=$("#add_packages_personame").val();
-         var add_business_placename=$("#add_packages_placename").val();
-         
-         
-         if(paymentmodeid==1 && (!add_business_cashamount || add_business_cashamount.length<=0) && (!add_business_cashdate ||  add_business_cashdate.length<=0) && (!add_business_personame ||  add_business_personame.length<=0) && (!add_business_placename ||  add_business_placename.length<=0)){
-            alert("Please fill all Cash Mode options!!!");
-            return false;
-         }
          
          if (currentIndex < newIndex)
         {

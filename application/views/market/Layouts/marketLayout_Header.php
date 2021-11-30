@@ -429,24 +429,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
            <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>Marketing-BusinessSelectedPackages">
             <i class="mdi mdi-shield-check menu-icon"></i>
-            <span class="menu-title">Manage Customer  <br> Packages Details </span>
+            <span class="menu-title">Customer Packages Details </span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/<?php echo base_url();?>Marketing-BusinessTransactions">
+            <i class="mdi mdi-view-day menu-icon"></i>
+            <span class="menu-title">Business Transactions </span>
             </a>
           </li>
           
-         
-
-        <li class="nav-item">
+         <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>Market-DealClosed">
             <i class="mdi mdi-shield-check menu-icon"></i>
             <span class="menu-title">Manage Deal Closed</span>
             </a>
           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="/<?php echo base_url();?>Marketing-BusinessTransactions">
-            <i class="mdi mdi-view-day menu-icon"></i>
-            <span class="menu-title">Manage Business Transactions </span>
-            </a>
-          </li>
+
+        
 
            <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>Marketing-SendDemoLinks">
@@ -455,37 +456,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </a>
           </li>
 
-           <!--  <li class="nav-item">
-            <a class="nav-link" href="index.html">
-            <i class="mdi mdi-shield-check menu-icon"></i>
-            <span class="menu-title">Manage Packages</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
-            <i class="mdi mdi-shield-check menu-icon"></i>
-            <span class="menu-title">Manage Coupons</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">
-            <i class="mdi mdi-shield-check menu-icon"></i>
-            <span class="menu-title">Deal Closed</span>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-            <i class="mdi mdi-shield-check menu-icon"></i>
-            <span class="menu-title">Duscount Report</span>
-            </a>
-          </li> -->
-         <!--  <li class="nav-item">
-            <a class="nav-link" href="#">
-            <i class="mdi mdi-puzzle menu-icon"></i>
-            <span class="menu-title">Widgets<span class="badge badge-danger">New</span></span>
-            </a>
-          </li> -->
+       
         </ul>
       </nav>
 				<!-- partial -->

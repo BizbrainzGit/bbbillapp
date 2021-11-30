@@ -107,6 +107,8 @@ include('Layouts/marketLayout_Header.php');
 include('Layouts/marketLayout_Footer.php');
 ?>
 
+<script src="/<?php echo base_url();?>assets/js/Common/AssignmentsController.js" type="text/javascript"></script>
+
 <script type="text/javascript">
      $( "#search_businessassignments_fromdate" ).datepicker({
       todayHighlight: true,

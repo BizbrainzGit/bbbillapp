@@ -314,10 +314,9 @@ public function saveEmployeesData(){
 				}
 				
 			}else{
-				$imagepath =null;
 				$image=null;
-				echo json_encode(array('success'=>false,'message'=>IMAGE_TYPE_ERR));
-					return;
+				// echo json_encode(array('success'=>false,'message'=>IMAGE_TYPE_ERR));
+				// 	return;
 				
 			}
 		
@@ -373,14 +372,12 @@ public function saveEmployeesData(){
 		$userid=$this->ion_auth->register($employees_employe_id,$employees_password,$employees_email,$employeedata,$group);
        
         $employeesAddressarray=array_merge($postData['dbinput']['employeesAddressarray'],$createdlog);
-        // print_r($employeesAddressarray);
-        // die();
-        
+       
         $addressid = $this->Address_model->addAddress($employeesAddressarray);
    
-	   $userdetailsarray = array_merge( array('address_id'=>$addressid,'user_id'=>$userid),$postData['dbinput']['employeesdetailsarray']);
+	    $userdetailsarray = array_merge( array('address_id'=>$addressid,'user_id'=>$userid),$postData['dbinput']['employeesdetailsarray']);
 	   
-	  $userdata_save = $this->Userdetails_model->addUserDetails($userdetailsarray);
+	    $userdata_save = $this->Userdetails_model->addUserDetails($userdetailsarray);
 		
           
             if($userdata_save){

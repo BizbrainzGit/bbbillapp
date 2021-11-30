@@ -945,7 +945,7 @@ $productinfo=isset($merchant_product_info_id)?$merchant_product_info_id:null;
 include('Layouts/market-leadLayout_Footer.php');
 ?>
 
-
+ <script src="/<?php echo base_url();?>assets/js/Common/MarketleadTodayAllAppointmentsController.js"></script>
 
 <script type="text/javascript">
   

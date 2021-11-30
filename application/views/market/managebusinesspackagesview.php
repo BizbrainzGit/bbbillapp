@@ -698,6 +698,9 @@ include('Layouts/marketLayout_Header.php');
 <?php
 include('Layouts/marketLayout_Footer.php');
 ?>
+<script src="/<?php echo base_url();?>assets/js/Common/BusinessSelectedPackageController.js" type="text/javascript"></script>
+
+
 <script type="text/javascript">
 $('#search_businessseletedpackage_fromdate').datepicker({
       todayHighlight: true,

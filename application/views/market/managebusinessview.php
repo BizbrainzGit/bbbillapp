@@ -1581,7 +1581,8 @@ include('Layouts/marketLayout_Header.php');
 include('Layouts/marketLayout_Footer.php');
 ?>
 
-
+ <script src="/<?php echo base_url();?>assets/js/Common/BusinessController.js" type="text/javascript"></script>
+ <script src="/<?php echo base_url();?>assets/js/Common/BusinessCPselectedController.js"></script>
 
 
 <script type="text/javascript">

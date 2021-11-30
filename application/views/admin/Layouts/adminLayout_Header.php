@@ -130,10 +130,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span class="menu-title">Dashboard</span>
             </a>
           </li>
-           <li class="nav-item">
-            <a class="nav-link" href="/<?php echo base_url();?>admin-GForm-View">
-            <i class="mdi mdi-view-dashboard menu-icon"></i>
-            <span class="menu-title">G-Form</span>
+
+         
+
+          <li class="nav-item">
+            <a class="nav-link" href="/<?php echo base_url();?>admin-manageEmployees">
+            <i class="mdi  mdi-account menu-icon"></i>
+            <span class="menu-title">Manage Employees</span>
             </a>
           </li>
           
@@ -143,17 +146,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span class="menu-title">User City Mapping</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/<?php echo base_url();?>admin-Prospect-Leads">
-            <i class="mdi mdi-shield-check menu-icon"></i>
-            <span class="menu-title">Prospect leads </span>
-            </a>
-          </li>
 
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>admin-TodayAppointments">
             <i class="mdi mdi-assistant menu-icon"></i>
-            <span class="menu-title">Manage Today Appointments</span>
+            <span class="menu-title">Today Appointments</span>
             </a>
           </li>
           
@@ -167,30 +164,32 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>admin-manageBusiness">
             <i class="mdi mdi-hand-pointing-right menu-icon"></i>
-            <span class="menu-title">Manage Business</span>
+            <span class="menu-title">Manage Business </span>
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>admin-BusinessSelectedPackages">
             <i class="mdi mdi-shield-check menu-icon"></i>
-            <span class="menu-title">Manage Customer  <br> Packages Details </span>
+            <span class="menu-title">Customer Packages Details </span>
             </a>
           </li> 
+
+           <li class="nav-item">
+            <a class="nav-link" href="/<?php echo base_url();?>admin-BusinessTransactions">
+            <i class="mdi mdi-view-day menu-icon"></i>
+            <span class="menu-title">Business Transactions </span>
+            </a>
+          </li>
 
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>admin-DealClosed">
             <i class="mdi mdi-view-day menu-icon"></i>
-            <span class="menu-title">Manage Deals Closed</span>
+            <span class="menu-title">Deals Closed</span>
             </a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="/<?php echo base_url();?>admin-BusinessTransactions">
-            <i class="mdi mdi-view-day menu-icon"></i>
-            <span class="menu-title">Manage Business Transactions </span>
-            </a>
-          </li>
+         
 
            <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>admin-Packages-List">
@@ -199,12 +198,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </a>
           </li>
 
-           <li class="nav-item">
-            <a class="nav-link" href="/<?php echo base_url();?>admin-manageDemoWebsites">
-            <i class="mdi mdi-web menu-icon"></i>
-            <span class="menu-title">Manage Demo Websites</span>
-            </a>
-          </li>
+           
+
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>admin-manageCampaigns">
             <i class="mdi mdi-domain menu-icon"></i>
@@ -240,27 +235,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </a>
           </li>
           
-
-          <li class="nav-item">
-            <a class="nav-link" href="/<?php echo base_url();?>admin-manageEmployees">
-            <i class="mdi  mdi-account menu-icon"></i>
-            <span class="menu-title">Manage Employees</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/<?php echo base_url();?>admin-FeedbackQuestions">
-            <i class="mdi mdi-help-circle menu-icon"></i>
-            <span class="menu-title">Feedback Questions</span>
-            </a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="/<?php echo base_url();?>admin-managebusinessKeywords">
-            <i class="mdi mdi-key menu-icon"></i>
-            <span class="menu-title">Manage Business Keywords</span>
-            </a>
-          </li>
-        
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>admin-SendDemoLinks">
             <i class="mdi mdi-shield-check menu-icon"></i>
@@ -268,10 +242,44 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </a>
           </li>
 
-            <li class="nav-item">
+           <li class="nav-item">
+            <a class="nav-link" href="/<?php echo base_url();?>admin-GForm-View">
+            <i class="mdi mdi-view-dashboard menu-icon"></i>
+            <span class="menu-title">G-Form</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/<?php echo base_url();?>admin-Prospect-Leads">
+            <i class="mdi mdi-shield-check menu-icon"></i>
+            <span class="menu-title">Prospect leads </span>
+            </a>
+          </li>
+         
+          <li class="nav-item">
+            <a class="nav-link" href="/<?php echo base_url();?>admin-managebusinessKeywords">
+            <i class="mdi mdi-key menu-icon"></i>
+            <span class="menu-title">Manage Business Keywords</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/<?php echo base_url();?>admin-manageDemoWebsites">
+            <i class="mdi mdi-web menu-icon"></i>
+            <span class="menu-title">Manage Demo Websites</span>
+            </a>
+          </li>
+           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>admin-managecity">
             <i class="mdi mdi-key menu-icon"></i>
             <span class="menu-title">Manage Cities</span>
+            </a>
+          </li>
+          
+           <li class="nav-item">
+            <a class="nav-link" href="/<?php echo base_url();?>admin-Producttypes">
+            <i class="mdi mdi-key menu-icon"></i>
+            <span class="menu-title">Products Types</span>
             </a>
           </li>
           
@@ -292,6 +300,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/<?php echo base_url();?>admin-FeedbackQuestions">
+            <i class="mdi mdi-help-circle menu-icon"></i>
+            <span class="menu-title">Feedback Questions</span>
+            </a>
+          </li>
+
         </ul>
       </nav>
 				<!-- partial -->

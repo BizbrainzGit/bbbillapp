@@ -41,8 +41,8 @@ class Common extends CommonBaseController {
          $this->load->model('Assignments_model');
          $this->load->model('BusinessPaymentTransaction_model');
          $this->load->model('Sms_send_model'); 
-         $this->load->model('Userlogs_model'); 
-        
+         $this->load->model('Userlogs_model');  
+         $this->load->model('ProductType_model'); 
 
     }
 	public function logout() {
@@ -204,6 +204,20 @@ class Common extends CommonBaseController {
 		 echo json_encode(array('data'=>$weblist));
 		 return;
 		}
+
+
+		public function getProductType()
+		{
+			 $producttypename =$this->ProductType_model->ProductTypeList();//fetching from database table
+			 echo json_encode(array('data'=>$producttypename));
+			 return;
+		}
+
+		public function getStatusForPackagesSeleted(){
+		$status =$this->Status_model->StatusForPackagesSeleted();//fetching from database table
+		 echo json_encode(array('data'=>$status));
+		 return;
+	}
 
 } 
 ?>

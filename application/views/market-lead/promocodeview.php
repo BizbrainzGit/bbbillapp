@@ -236,6 +236,11 @@ include('Layouts/market-leadLayout_Header.php');
 <?php
 include('Layouts/market-leadLayout_Footer.php');
 ?>
+
+<script src="/<?php echo base_url();?>assets/js/Common/PromocodeController.js"></script>
+
+
+
    <script type="text/javascript">
      $("#add_validity_to").datepicker({
       todayHighlight: true,

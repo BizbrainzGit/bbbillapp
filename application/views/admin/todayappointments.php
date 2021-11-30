@@ -57,11 +57,9 @@ include('Layouts/adminLayout_Header.php');
     </div>
     <!-- container-scroller -->
 
-
-
-       
          
 <?php
 include('Layouts/adminLayout_Footer.php');
 ?>
 
+ <script src="/<?php echo base_url();?>assets/js/Common/TodayAppointmentsController.js" type="text/javascript"></script>

@@ -59,21 +59,11 @@ var base_url={ baseurl:"/<?php echo base_url();?>" };
     <script src="/<?php echo base_url();?>assets/js/select2.js"></script>
     <script src="/<?php echo base_url();?>assets/js/gobalSettings.js"></script> 
     <script src="/<?php echo base_url();?>assets/js/Common/common.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/BusinessController.js" type="text/javascript"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/BusinessCPselectedController.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/BusinessSelectedPackageController.js" type="text/javascript"></script> 
-    
     <script src="/<?php echo base_url();?>assets/js/Common/LoginController.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/LeadsController.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/DealClosedController.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/GFormController.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/DashboardController.js" type="text/javascript">
-    </script>
     
-    <script src="/<?php echo base_url();?>assets/js/Common/AssignmentsController.js"> </script>
-    <script src="/<?php echo base_url();?>assets/js/Common/TodayAppointmentsController.js"> </script>
-    <script src="/<?php echo base_url();?>assets/js/Common/BusinessTransactionController.js"></script>
-    <script src="/<?php echo base_url();?>assets/js/Common/SendLinkController.js"></script> 
+   
+    
+  
 
 
 	</body>

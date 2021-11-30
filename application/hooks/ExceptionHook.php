@@ -1,4 +1,5 @@
 <?php
+
 require_once('custom_log.php');
 
 class ExceptionHook
@@ -11,7 +12,7 @@ class ExceptionHook
 	public function HandleExceptions($exception)
 	{
 		$CI = & get_instance();
-		$CI->load->helper('Util');
+		$CI->load->helper('util_helper');
 		
 		$msg ='Exception of type \''.get_class($exception).'\' occurred with Message: '.$exception->getMessage().' in File '.$exception->getFile().' at Line '.$exception->getLine();
 		$msg .="\r\nStacktrace:\r\n";
@@ -21,8 +22,8 @@ class ExceptionHook
 		
 		$clog = new Custom_log();
 		$clog->logMessages();
-		
 		header($CI->cprotocol . ' 352 ' . OOPS_ADMINISTRATOR);
+
 	}
 }
 ?>

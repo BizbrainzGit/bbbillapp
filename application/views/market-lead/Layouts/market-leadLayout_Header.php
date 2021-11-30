@@ -224,27 +224,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>Market-Lead-BusinessSelectedPackages">
             <i class="mdi mdi-shield-check menu-icon"></i>
-            <span class="menu-title">Manage Customer  <br> Packages Details </span>
+            <span class="menu-title"> Customer Packages Details </span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="/<?php echo base_url();?>Market-Lead-BusinessTransactions">
+            <i class="mdi mdi-view-day menu-icon"></i>
+            <span class="menu-title">Business Transactions </span>
             </a>
           </li>
 
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>Market-Lead-DealClosed">
             <i class="mdi mdi-view-day menu-icon"></i>
-            <span class="menu-title">Manage Deal Closed</span>
+            <span class="menu-title"> Deal Closed</span>
             </a>
           </li>
+
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>Market-Lead-Promocodes">
             <i class="mdi mdi-view-day menu-icon"></i>
             <span class="menu-title">Manage PromoCodes</span>
-            </a>
-          </li>
-
-           <li class="nav-item">
-            <a class="nav-link" href="/<?php echo base_url();?>Market-Lead-BusinessTransactions">
-            <i class="mdi mdi-view-day menu-icon"></i>
-            <span class="menu-title">Manage Business <br> Transactions </span>
             </a>
           </li>
 
@@ -254,6 +255,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <span class="menu-title">Prospect leads </span>
             </a>
           </li>
+          
           <li class="nav-item">
             <a class="nav-link" href="/<?php echo base_url();?>Market-Lead-SendDemoLinks">
             <i class="mdi mdi-shield-check menu-icon"></i>
@@ -282,8 +284,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </ul>
       </nav>
 				<!-- partial -->
-
-
 
          <!-- Modal -->
   <div class="modal fade" id="changepswdModal" role="dialog">

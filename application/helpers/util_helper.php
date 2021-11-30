@@ -519,69 +519,76 @@ function getLongLat($address){
     }
   
 }
-function sendEmail($from, $fromName, $to, $subject, $body, $attachments)
-{
-	$CI =& get_instance();
-	//echo $from.'<br>';
-	if (isset($CI->config->config['environment']) && $CI->config->config['environment'] == 'test'){
-		//echo '2';
-		
-		$CI->load->library('email', $CI->config->config['smtpsettings']);
-		
-		$CI->email->initialize($CI->config->config['smtpsettings']);
-	}
-	else
-	{
-		//echo '1';
-		$CI->load->library('email', $CI->config->config['smtpsettingslive']);
-		
-		$CI->email->initialize($CI->config->config['smtpsettingslive']);
-	}
-	$CI->email->set_newline("\r\n");
-	
-	$CI->email->from($from, $fromName);
-	
-	if(isset($CI->config->config['environment']) && $CI->config->config['environment'] == 'test'){
-        
-		if (endsWith($to, "bizbrainz.in")){
-			$CI->email->to($to);
-			//$CI->email->cc("varaharahari@gmail.com");
-			$CI->email->subject($subject);
-		}
-		else
-		{
-           
-			$CI->email->to("info@bizbrainz.in");
-			$CI->email->subject($subject.' - ' .$to);
-		}
-	}
-	else
-	{
-		$CI->email->to($to);
-		$CI->email->subject($subject);
-		//$CI->email->cc("varaharahari@gmail.com");
-	}
-	$CI->email->message($body);
-	
-	if ($attachments != null && !empty($attachments)){
-        // foreach($attachments as $a){
-			$CI->email->attach(FCPATH.$attachments);
-      // }
-	}
-	try
-	{
-		$ss = $CI->email->send();
-		//var_dump($CI->email->print_debugger());
-		//die();
-		return true;
-	}
-	catch (Exception $e) 
-	{
-		//var_dump($CI->email->print_debugger());
-		var_dump($e);
-	}
-	return false;
-}
+
+
+
+function sendEmail($to, $subject, $body, $attachments)
+{           
+
+	       $from= "bizbrainzoffice@gmail.com";
+	       $fromName= "Bizbrainz Technologies";
+
+			$CI =& get_instance();
+			//echo $from.'<br>';
+			if (isset($CI->config->config['environment']) && $CI->config->config['environment'] == 'test'){
+				$CI->load->library('email', $CI->config->config['smtpsettings']);
+				
+				$CI->email->initialize($CI->config->config['smtpsettings']);
+			}
+			else
+			{
+				//echo '1';
+				$CI->load->library('email', $CI->config->config['smtpsettingslive']);
+				
+				$CI->email->initialize($CI->config->config['smtpsettingslive']);
+			}
+			$CI->email->set_newline("\r\n");
+			
+			$CI->email->from($from, $fromName);
+			
+			if(isset($CI->config->config['environment']) && $CI->config->config['environment'] == 'test'){
+		        
+				if (endsWith($to, "bizbrainz.in")){
+					$CI->email->to($to);
+					$CI->email->cc("info@bizbrainz.in");
+					$CI->email->subject($subject);
+				}
+				else
+				{
+		           
+					$CI->email->to("info@bizbrainz.in");
+					$CI->email->subject($subject.' - ' .$to);
+				}
+			}
+			else
+			{
+				$CI->email->to($to);
+				$CI->email->subject($subject);
+				$CI->email->cc("info@bizbrainz.in");
+			}
+			$CI->email->message($body);
+			
+			if ($attachments != null && !empty($attachments)){
+		        // foreach($attachments as $a){
+					$CI->email->attach(FCPATH.$attachments);
+		      // }
+			}
+			try
+			{
+				$ss = $CI->email->send();
+				//var_dump($CI->email->print_debugger());
+				return true;
+			}
+			catch (Exception $e) 
+			{
+				//var_dump($CI->email->print_debugger());
+				var_dump($e);
+			}
+			return false;
+    }
+
+
+
 function randomPassword() {
     $alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
     $pass = array(); 

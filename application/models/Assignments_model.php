@@ -7,7 +7,7 @@ class Assignments_model extends Eloquent {
     public $timestamps = false;
     protected $table = "assignments"; // table name
     public $primaryKey = 'id';
-    protected $fillable = ['business_details_id','message','tele_marketing_user_id','marketing_user_id','appointment_date','created_ip','created_by','created_on','	modified_ip','modified_by','modified_on','marketlead_user_id','appointment_time','marketing_message','assignment_status','is_update'];
+    protected $fillable = ['business_details_id','message','tele_marketing_user_id','marketing_user_id','appointment_date','created_ip','created_by','created_on','	modified_ip','modified_by','modified_on','marketlead_user_id','appointment_time','marketing_message','assignment_status','is_update','next_followup_date'];
     
     function Addassigment($assigmentarray){
 		$addresult=self::create($assigmentarray);
@@ -334,7 +334,7 @@ public function AssignmentsExportForAdmin($business_cname,$business_city,$busine
 		} 
     }
 
-    function getAssignmentMarketingDetails($add_markrting_user,$add_appointment_date,$add_appointment_time_to,$add_appointment_time_from){
+  function getAssignmentMarketingDetails($add_markrting_user,$add_appointment_date,$add_appointment_time_to,$add_appointment_time_from){
     	$assignmentCount = self::where('assignments.marketing_user_id',$add_markrting_user)->where('assignments.appointment_date',$add_appointment_date)->whereBetween(
   'appointment_time', [$add_appointment_time_from, $add_appointment_time_to])->get()->count();
     	if($assignmentCount>0){
@@ -394,6 +394,41 @@ public function AssignmentsExportForAdmin($business_cname,$business_city,$busine
 	             ->get([ new raw('count(assignments.id) as totalappointments'),'cityname']);
 		return $query;
 	} 
+
+
+
+// Today Follow Up Appoints List Start //
+
+	 function TodayFollowUpAppointmentList($today,$userid){
+    
+		if($userid!=''){
+			$userid="\n AND(assignments.tele_marketing_user_id ='$userid')";
+		}else{
+			$userid=" ";
+		}
+		
+        if($today!=''){
+			$searchdate="\n  AND assignments.next_followup_date = '$today' ";
+		  }else{
+			$searchdate=" ";
+		  }
+     $searchagentData=Capsule::select("SELECT assignments.id as id, assignments.message,business_details.company_name,business_details.person_name,DATE_FORMAT( assignments.appointment_date,'%d-%m-%Y') as appointment_date,DATE_FORMAT(assignments.appointment_time,'%h:%i:%s %p') as appointment_time,DATE_FORMAT(assignments.created_on,'%d-%m-%Y %h:%i:%s %p') as work_assigned_date,CONCAT(user_details.first_name,' ',user_details.last_name) as marketing_name,CONCAT(ud.first_name,' ',ud.last_name) as tele_name,CONCAT(udd.first_name,' ',udd.last_name) as marketlead_name,marketing_message,DATE_FORMAT(assignments.modified_on,'%d-%m-%Y %h:%i:%s %p') as assignmentmsg_datetime, DATE_FORMAT(CONCAT(appointment_date,' ',appointment_time),'%d-%m-%Y %h:%i:%s %p') as appointment_datetime,status_value,CONCAT(company_name,'<br>',business_details.business_id) as company_name_id , CONCAT(person_name,' <br>',mobile_no) as person_name_mobile,cityname
+		from assignments
+		left join user_details on user_details.user_id=assignments.marketing_user_id 
+		left join user_details ud on ud.user_id=assignments.tele_marketing_user_id
+		left join user_details udd on udd.user_id=assignments.marketlead_user_id
+		join business_details on business_details.id=assignments.business_details_id 
+		join address on address.id=business_details.address_id
+		join cities on cities.cityid = address.city_id 
+		left join business_status on business_status.id = assignments.assignment_status
+	   WHERE assignments.id !=0".$searchdate.$userid);     
+	   return $searchagentData;
+
+	   }
+
+
+// Today Follow Up Appoints List End //
+
 
 
 }?>

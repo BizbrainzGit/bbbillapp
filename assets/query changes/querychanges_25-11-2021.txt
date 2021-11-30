@@ -1,0 +1,18 @@
+date : 25-11-2021
+
+
+next_followup_date	date			Yes	NULL	
+
+
+
+
+
+
+
+
+
+
+
+
+
+UPDATE `business_status` SET `status_value` = '<label class=\"badge badge-info\">Full Payment</label>' WHERE `business_status`.`id` = 8;

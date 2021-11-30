@@ -117,7 +117,7 @@ include('Layouts/adminLayout_Footer.php');
 ?>
 
 
-
+<script src="/<?php echo base_url();?>assets/js/Common/BusinessTransactionController.js" type="text/javascript"></script>
 
 
   <!-- keywords add model start-->
@@ -136,7 +136,6 @@ include('Layouts/adminLayout_Footer.php');
         <div class="modal-body">
                     <div class="body">
                          <form id="add_businesstransaction_cheque_approval" method="post" >
-
                             <div class="row clearfix">
                                <div class="col-sm-12">
                                     <div class="form-group">

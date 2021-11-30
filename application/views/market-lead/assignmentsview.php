@@ -163,6 +163,7 @@ include('Layouts/market-leadLayout_Header.php');
 <?php
 include('Layouts/market-leadLayout_Footer.php');
 ?>
+<script src="/<?php echo base_url();?>assets/js/Common/AssignmentsController.js" type="text/javascript"></script>
 
 <script type="text/javascript">
      $( "#search_businessassignments_fromdate" ).datepicker({

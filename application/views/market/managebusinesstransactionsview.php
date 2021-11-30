@@ -115,7 +115,7 @@ include('Layouts/marketLayout_Header.php');
 <?php
 include('Layouts/marketLayout_Footer.php');
 ?>
-
+<script src="/<?php echo base_url();?>assets/js/Common/BusinessTransactionController.js" type="text/javascript"></script>
 
 
 
